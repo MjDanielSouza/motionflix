@@ -19,16 +19,17 @@ Uma plataforma de streaming e aprendizado com visual cinematográfico no estilo 
 
 ---
 
-## 🚀 Como Visualizar Online (GitHub Pages)
+## 🚀 Acesse a Plataforma Online (GitHub Pages)
 
-Este projeto está pronto para ser publicado no **GitHub Pages**:
+Acesse diretamente pelo navegador no seu computador ou celular:
+👉 **[https://mjdanielsouza.github.io/motion-tuto/](https://mjdanielsouza.github.io/motion-tuto/)**
 
-1. Crie um novo repositório no seu GitHub (ex.: `motionflix`).
-2. Suba os arquivos do projeto para o branch `main`.
-3. No seu repositório no GitHub, acesse **Settings** > **Pages**.
-4. Em **Branch**, selecione `main` e a pasta `/ (root)`.
-5. Clique em **Save**. Em instantes, a sua página estará no ar no link:
-   `https://<seu-usuario>.github.io/motionflix/`
+---
+
+### Como ativar o GitHub Pages (se ainda não ativou):
+1. Acesse: **[Configurações de Pages do Repositório](https://github.com/MjDanielSouza/motion-tuto/settings/pages)**
+2. Em **Build and deployment > Branch**, selecione `main` e a pasta `/ (root)`.
+3. Clique em **Save**. Em 1 minuto o link acima estará ativo!
 
 ---
 
