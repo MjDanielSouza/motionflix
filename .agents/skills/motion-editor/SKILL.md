@@ -34,8 +34,14 @@ Esta skill transforma o assistente em um **editor técnico de motion design e in
    - Desenvolva o corpo da matéria com HTML semântico (`<h3>`, `<p>`, `<code>`, `<pre>`, caixas de destaque).
    - Extraia links relacionados e tags relevantes.
 
-3. **Inclusão em `insights_data.js`**:
-   - Carregue o arquivo [insights_data.js](file:///d:/ESTUDOS/MOTION/insights_data.js).
+3. **Entrega no Chat para Revisão & Aprovação (OBRIGATÓRIO)**:
+   - **NUNCA faça o commit ou salve em `insights_data.js` sem aprovação prévia**.
+   - Apresente o texto completo da matéria formatado em Markdown limpo aqui dentro do chat.
+   - Mostre: Título, Lide/Resumo, 3 Key Takeaways, Seções do corpo da matéria, caixas de destaque, código/prompts e links.
+   - Peça a avaliação de Daniel e aguarde sua aprovação explícita.
+
+4. **Inclusão em `insights_data.js` (Após Aprovação)**:
+   - Somente após Daniel aprovar, carregue o arquivo [insights_data.js](file:///d:/ESTUDOS/MOTION/insights_data.js).
    - Defina os metadados fixos de autoria:
      - `author`: `"Daniel Souza"`
      - `authorAvatar`: `"assets/daniel_souza.jpg"`
@@ -43,7 +49,7 @@ Esta skill transforma o assistente em um **editor técnico de motion design e in
    - Adicione o novo objeto no topo da lista `DEFAULT_INSIGHTS`.
    - Salve o arquivo mantendo a integridade sintática do JavaScript.
 
-4. **Publicação no GitHub**:
+5. **Publicação no GitHub**:
    - Execute o git para atualizar `main` e `gh-pages`:
      ```bash
      git add insights_data.js
@@ -54,4 +60,4 @@ Esta skill transforma o assistente em um **editor técnico de motion design e in
      git push origin gh-pages
      git checkout main
      ```
-   - Confirme ao usuário que a matéria já está publicada no ar em `https://mjdanielsouza.github.io/motionflix/insights.html`.
+   - Confirme a Daniel que a matéria já está publicada no ar em `https://mjdanielsouza.github.io/motionflix/insights.html`.

@@ -26,8 +26,11 @@ Sempre que Daniel abrir uma conversa neste repositório enviando um link (YouTub
    - `contentHtml`: Texto rico do artigo com subtítulos (`<h3>`), parágrafos explicativos, blocos de código/prompts (`<pre>`) e caixas de destaque (`<div class="p-4 rounded-xl bg-indigo-500/10...">`).
    - `relatedLinks`: Links oficiais (GitHub, demo, artigo original).
    - `tags`: Array de palavras-chave.
-3. **Publicação Automática**:
-   - Ao adicionar novas matérias, insira o novo objeto no topo do array `DEFAULT_INSIGHTS` em `insights_data.js`.
+3. **Apresentação & Aprovação no Chat (Fluxo Obrigatório)**:
+   - **NUNCA publique direto**. Ao concluir a redação completa da matéria, entregue o texto integral formatado diretamente aqui dentro do chat para Daniel revisar.
+   - Aguarde a leitura, ajustes eventuais e a aprovação explícita de Daniel (ex.: *"Aprovado"*, *"Pode publicar"*, *"Sobe pro site"*).
+4. **Publicação no GitHub (Apenas após Aprovação)**:
+   - Somente após Daniel aprovar o texto no chat, insira o novo objeto no topo do array `DEFAULT_INSIGHTS` em `insights_data.js`.
    - Faça o commit e envie para as branches `main` e `gh-pages` com:
      `git add insights_data.js; git commit -m "feat(insight): [Título]"; git push origin main; git checkout gh-pages; git merge main; git push origin gh-pages; git checkout main`
    - O GitHub Pages atualizará o site automaticamente em segundos.
