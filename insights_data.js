@@ -11,7 +11,9 @@ const DEFAULT_INSIGHTS = [
     badgeColor: "from-amber-500 via-orange-500 to-red-600",
     date: "11 de Novembro de 2026",
     readTime: "8 min de leitura",
-    author: "Motion Radar",
+    author: "Daniel Souza",
+    authorAvatar: "assets/daniel_souza.jpg",
+    authorInstagram: "https://www.instagram.com/7danielsouza/",
     coverImage: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1200&auto=format&fit=crop&q=80",
     summary: "Dossiê completo do Adobe MAX 2026: a chegada do Model Context Protocol (MCP) nativo, o fim das gambiarras de scripts legados, o hub multi-modelo com Kling, Runway e Google no Firefly, e como rodar agentes de IA no After Effects hoje mesmo.",
     keyTakeaways: [
