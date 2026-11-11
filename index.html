@@ -181,7 +181,7 @@
           <input 
             type="text" 
             id="search-input" 
-            placeholder="Buscar criador, estilo, técnica..."
+            placeholder="Search creator, visual style, technique..."
             class="bg-brand-card/90 text-xs sm:text-sm text-white placeholder-slate-400 pl-8 sm:pl-9 pr-7 sm:pr-8 py-1.5 sm:py-2 rounded-full w-32 xs:w-44 sm:w-64 md:w-80 border border-brand-border focus:border-brand-red focus:w-48 xs:focus:w-56 sm:focus:w-80 md:focus:w-96 focus:outline-none transition-all duration-300"
             oninput="handleSearch(this.value)"
           >
@@ -230,13 +230,13 @@
         <div class="flex flex-wrap items-center gap-1.5 sm:gap-2.5">
           <span id="hero-type-badge" class="px-2.5 py-1 rounded bg-indigo-600 text-white font-bold text-[10px] sm:text-xs tracking-wider uppercase flex items-center gap-1 shadow-md shadow-indigo-600/40">
             <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
-            🎓 TUTORIAL EM DESTAQUE
+            🎓 FEATURED MASTERCLASS
           </span>
           <span id="hero-platform" class="px-2 py-0.5 rounded bg-white/10 backdrop-blur-md text-slate-200 font-medium text-[10px] sm:text-xs border border-white/10">YouTube · 16:9</span>
           <span id="hero-duration" class="px-2 py-0.5 rounded bg-white/10 backdrop-blur-md text-slate-200 font-medium text-[10px] sm:text-xs border border-white/10">20 min 39 s</span>
           <span class="text-emerald-400 font-bold text-[10px] sm:text-xs flex items-center gap-1">
-            <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-            98% Recomendado
+            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            98% Recommended
           </span>
         </div>
 
@@ -247,7 +247,7 @@
 
         <!-- Creator & Styles -->
         <div class="flex flex-wrap items-center gap-2 text-slate-300 text-xs sm:text-sm">
-          <span>Criador: <strong id="hero-creator" class="text-white font-semibold">Bart_VFX</strong></span>
+          <span>Creator: <strong id="hero-creator" class="text-white font-semibold">Bart_VFX</strong></span>
           <span>•</span>
           <div id="hero-styles" class="flex flex-wrap gap-1.5">
             <!-- Badges inserted via JS -->
@@ -536,10 +536,10 @@
             <h3 class="text-xs sm:text-base font-bold font-display text-white flex items-center gap-2">
               <span>👥</span>
               <span>Creators & Motion Studios</span>
-              <span class="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-slate-300 font-bold font-mono">50 Fichas Técnicas</span>
-              <span id="active-creator-pill" class="text-[10px] px-2 py-0.5 rounded-full bg-brand-red text-white font-bold hidden">Filtrando</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-slate-300 font-bold font-mono">50 Creator Profiles</span>
+              <span id="active-creator-pill" class="text-[10px] px-2 py-0.5 rounded-full bg-brand-red text-white font-bold hidden">Filtering</span>
             </h3>
-            <p class="text-xs text-slate-400 mt-0.5">Explore os perfis, especialidades visuais e portfólios dos criadores cadastrados.</p>
+            <p class="text-xs text-slate-400 mt-0.5">Explore motion signatures, art styles and portfolios of featured creators.</p>
           </div>
 
           <div class="flex items-center gap-2">
@@ -547,14 +547,14 @@
               <input 
                 type="text" 
                 id="creator-quick-search" 
-                placeholder="Buscar criador..." 
+                placeholder="Search creator..." 
                 class="bg-brand-dark text-xs text-white placeholder-slate-500 pl-7 pr-3 py-1.5 rounded-lg border border-brand-border focus:border-brand-red focus:outline-none w-36 sm:w-44"
                 oninput="handleCreatorSearch(this.value)"
               >
               <span class="absolute left-2.5 top-1.5 text-slate-500 text-xs">🔍</span>
             </div>
             <button onclick="filterByCreator('all')" class="text-xs text-slate-300 hover:text-white px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-colors whitespace-nowrap">
-              Ver Todos
+              Show All
             </button>
           </div>
         </div>
@@ -567,7 +567,7 @@
         <!-- Expand / Collapse Creators -->
         <div id="creator-expand-container" class="pt-2 text-center">
           <button id="creator-expand-btn" onclick="toggleCreatorsExpand()" class="text-xs text-indigo-400 hover:text-indigo-300 font-semibold px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all inline-flex items-center gap-1.5 shadow-sm">
-            <span>Mostrar todos os 50 criadores</span>
+            <span>Show all 50 creators</span>
             <span>↓</span>
           </button>
         </div>
@@ -642,7 +642,7 @@
               <span id="modal-duration">20 min</span>
             </div>
             <h2 id="modal-title" class="font-display font-extrabold text-xl sm:text-3xl text-white break-words">Título</h2>
-            <p class="text-xs sm:text-sm text-slate-300">Criado por: <strong id="modal-creator" class="text-white font-semibold">Autor</strong></p>
+            <p class="text-xs sm:text-sm text-slate-300">Creator: <strong id="modal-creator" class="text-white font-semibold">Creator</strong></p>
           </div>
 
           <div class="flex flex-wrap sm:flex-nowrap items-center gap-2 shrink-0 pt-1 sm:pt-0">
@@ -661,7 +661,7 @@
 
         <!-- Styles Tags -->
         <div class="space-y-1.5">
-          <h4 class="text-[10px] sm:text-xs uppercase font-bold text-slate-400 tracking-wider">Estilos & Categorias</h4>
+          <h4 class="text-[10px] sm:text-xs uppercase font-bold text-slate-400 tracking-wider">Visual Styles & Tags</h4>
           <div id="modal-styles" class="flex flex-wrap gap-1.5 sm:gap-2">
             <!-- Style tags -->
           </div>
@@ -673,7 +673,7 @@
           <div class="p-3.5 sm:p-4 rounded-xl bg-brand-dark/60 border border-brand-border/60 space-y-1.5">
             <h4 class="text-[11px] sm:text-xs uppercase font-bold text-brand-red tracking-wider flex items-center gap-1.5">
               <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-              O que a referência ensina
+              What this Reference Teaches
             </h4>
             <p id="modal-desc" class="text-xs sm:text-sm text-slate-300 leading-relaxed"></p>
           </div>
@@ -682,7 +682,7 @@
           <div class="p-3.5 sm:p-4 rounded-xl bg-brand-dark/60 border border-brand-border/60 space-y-1.5">
             <h4 class="text-[11px] sm:text-xs uppercase font-bold text-indigo-400 tracking-wider flex items-center gap-1.5">
               <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-              Técnicas & Keyframes
+              Techniques & Keyframes
             </h4>
             <p id="modal-techniques" class="text-xs sm:text-sm text-slate-300 leading-relaxed"></p>
           </div>
@@ -693,26 +693,26 @@
           <div class="flex items-center justify-between">
             <h4 class="text-xs sm:text-sm uppercase font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-300 flex items-center gap-2">
               <span>⚡</span>
-              <span>Como Criar com esta Referência: Prompt Otimizado para IA</span>
+              <span>AI Prompt & Motion Recipe: Ready for Video & 3D</span>
             </h4>
-            <span class="text-[10px] px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 font-bold border border-purple-500/30 uppercase">Pronto para Usar</span>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 font-bold border border-purple-500/30 uppercase">Ready to Use</span>
           </div>
           
           <p class="text-xs text-slate-300 leading-relaxed">
-            Use este prompt pronto no <strong>Midjourney, Runway Gen-3, Kling AI ou Sora</strong> para recriar a mesma estética, iluminação e dinâmica de movimento desta referência:
+            Use this optimized prompt in <strong>Midjourney, Runway Gen-3, Kling AI, Sora or ComfyUI</strong> to recreate the same lighting, visual motion grammar and camera pacing:
           </p>
 
           <div class="relative bg-black/60 rounded-xl p-3.5 border border-slate-800 text-xs font-mono text-emerald-400 selection:bg-purple-600">
             <p id="modal-ai-prompt" class="leading-relaxed select-all"></p>
             <button onclick="copyAIPrompt()" class="mt-2.5 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-md shadow-indigo-600/30 transition-all">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-              <span id="copy-ai-prompt-btn">Copiar Prompt para IA</span>
+              <span id="copy-ai-prompt-btn">Copy AI Prompt</span>
             </button>
           </div>
 
           <div class="pt-2 text-[11px] text-slate-400 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 border-t border-white/5">
-            <span>💡 <strong>Dica de Produção:</strong> Copie o prompt para gerar o concept e finalize as curvas no After Effects.</span>
-            <button onclick="copyCurrentAnalysis()" class="text-indigo-400 hover:text-white font-semibold underline text-[11px]">Copiar Ficha Técnica Completa</button>
+            <span>💡 <strong>Workflow Tip:</strong> Copy the prompt for your generative concept and fine-tune your curves in the Graph Editor.</span>
+            <button onclick="copyCurrentAnalysis()" class="text-indigo-400 hover:text-white font-semibold underline text-[11px]">Copy Full Spec Breakdown</button>
           </div>
         </div>
 
@@ -754,8 +754,8 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
-            <label class="block text-slate-300 font-semibold mb-1">Criador / Canal *</label>
-            <input type="text" id="add-creator" required placeholder="Ex.: Jake In Motion ou @usuario" class="w-full bg-brand-dark border border-brand-border rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-red">
+            <label class="block text-slate-300 font-semibold mb-1">Creator / Studio *</label>
+            <input type="text" id="add-creator" required placeholder="Ex.: Jake In Motion, Ordinary Folk or @studio" class="w-full bg-brand-dark border border-brand-border rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-red">
           </div>
           <div>
             <label class="block text-slate-300 font-semibold mb-1">Plataforma</label>
@@ -1116,8 +1116,8 @@
         } else {
           expandContainer.classList.remove('hidden');
           expandBtn.innerHTML = creatorsExpanded 
-            ? '<span>Recolher para 12 criadores</span> <span>↑</span>' 
-            : `<span>Mostrar todos os ${allCreatorsList.length} criadores</span> <span>↓</span>`;
+            ? '<span>Collapse to 12 creators</span> <span>↑</span>' 
+            : `<span>Show all ${allCreatorsList.length} creators</span> <span>↓</span>`;
         }
       }
 
@@ -1126,7 +1126,7 @@
       if (activePill) {
         if (currentActiveCreator !== 'all') {
           activePill.classList.remove('hidden');
-          activePill.innerHTML = `<span>Filtrando: ${currentActiveCreator}</span> <button onclick="filterByCreator('all'); event.stopPropagation();" class="ml-1 hover:text-black">✕</button>`;
+          activePill.innerHTML = `<span>Creator: ${currentActiveCreator}</span> <button onclick="filterByCreator('all'); event.stopPropagation();" class="ml-1 hover:text-black">✕</button>`;
         } else {
           activePill.classList.add('hidden');
         }
@@ -1169,13 +1169,13 @@
                   ${c.name}
                 </h4>
                 <span class="text-[10px] text-slate-400 font-medium">
-                  ${c.count} ${c.count === 1 ? 'referência' : 'referências'}
+                  ${c.count} ${c.count === 1 ? 'reference' : 'references'}
                 </span>
               </div>
             </div>
 
             <div class="space-y-1">
-              <div class="text-[9px] uppercase font-bold text-slate-500 tracking-wider">Especialidade:</div>
+              <div class="text-[9px] uppercase font-bold text-slate-500 tracking-wider">Motion Signature:</div>
               <div class="flex flex-wrap gap-1">
                 <span class="px-1.5 py-0.5 rounded bg-white/10 text-[9px] sm:text-[10px] text-slate-200 font-semibold truncate max-w-full">
                   ${primaryStyle}
@@ -1190,7 +1190,7 @@
           </div>
 
           <div class="mt-3 pt-2 border-t border-white/5 flex items-center justify-between text-[10px] text-slate-400 group-hover:text-brand-red transition-colors font-medium">
-            <span>${isActive ? '✓ Filtrando' : 'Ver Ficha'}</span>
+            <span>${isActive ? '✓ Selected' : 'View Profile'}</span>
             <span class="group-hover:translate-x-0.5 transition-transform">→</span>
           </div>
         `;
@@ -1914,12 +1914,12 @@
     function copyCurrentAnalysis() {
       if (!currentModalItem) return;
       const text = `### [${currentModalItem.type}] ${currentModalItem.title} (#${currentModalItem.id})\n` +
-        `**Criador:** ${currentModalItem.creator}\n` +
-        `**Plataforma / Formato:** ${currentModalItem.platform} · ${currentModalItem.aspect || '16:9'}\n` +
+        `**Creator:** ${currentModalItem.creator}\n` +
+        `**Platform / Aspect:** ${currentModalItem.platform} · ${currentModalItem.aspect || '16:9'}\n` +
         `**Link:** ${currentModalItem.url || 'Sem link'}\n` +
-        `**Estilos:** ${(currentModalItem.styles || []).join(', ')}\n` +
-        `**Técnicas:** ${currentModalItem.techniques}\n\n` +
-        `**Resumo & Lição:**\n${currentModalItem.description}`;
+        `**Visual Styles:** ${(currentModalItem.styles || []).join(', ')}\n` +
+        `**Techniques & Keyframes:** ${currentModalItem.techniques}\n\n` +
+        `**Overview & Motion Recipe:**\n${currentModalItem.description}`;
 
       navigator.clipboard.writeText(text).then(() => {
         document.getElementById('copy-btn-text').innerText = 'Copiado!';
@@ -2129,7 +2129,7 @@
         aeTip = `Mantenha a coerência espacial do vetor de movimento. Todas as entradas devem respeitar o mesmo ponto de fuga ou eixo de aceleração.`;
       }
 
-      return `🤖 PROMPT PARA GERADORES DE VÍDEO & IMAGEM (Midjourney, Runway Gen-3, Kling, Sora):\n"${aiVisualPrompt}"\n\n⚙️ PRESET & CURVA DE AFTER EFFECTS:\n${aeTip}\n\n📐 METADADOS DA REFERÊNCIA:\n• Criador de Inspiração: ${item.creator}\n• Estilos: ${(item.styles || []).join(', ')}\n• Formato Ideal: ${item.aspect || '16:9'}`;
+      return `🤖 AI PROMPT RECIPE (Midjourney, Runway Gen-3, Kling, Sora, ComfyUI):\n"${aiVisualPrompt}"\n\n⚙️ GRAPH EDITOR & AFTER EFFECTS KEYFRAMES:\n${aeTip}\n\n📐 REFERENCE METADATA:\n• Creator: ${item.creator}\n• Visual Styles: ${(item.styles || []).join(', ')}\n• Aspect Ratio: ${item.aspect || '16:9'}`;
     }
 
     function copyAIPrompt() {
