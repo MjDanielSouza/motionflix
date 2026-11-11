@@ -1,0 +1,43 @@
+# 🎬 MOTIONFLIX · Palácio Mental das Referências de Motion
+
+Uma plataforma de streaming e aprendizado com visual cinematográfico no estilo **Netflix**, catalogando tutoriais e exemplos práticos de alto nível de Motion Design.
+
+![Banner](https://img.shields.io/badge/Motion-Design-E50914?style=for-the-badge&logo=netflix&logoColor=white)
+![Status](https://img.shields.io/badge/Aulas-120%20Disponíveis-6366F1?style=for-the-badge)
+![Tech](https://img.shields.io/badge/TailwindCSS-Responsive-00F2FE?style=for-the-badge)
+
+---
+
+## ✨ Recursos
+
+- 🎓 **44 Tutoriais e Masterclasses**: Aulas práticas de After Effects, Premiere, Blender, Remotion e Final Cut detalhando *keyframes*, curvas de velocidade no Graph Editor, expressões de mola (*springs*), rigging e transições invisíveis.
+- 🎬 **76 Exemplos Práticos de Motion**: Comerciais reais, UI motion de apps (iOS/macOS), openers, vinhetas e animações SaaS.
+- 📺 **Player de Vídeo Embutido**: Player sem interrupções com fichas técnicas e atalhos rápidos.
+- 📱 **Totalmente Responsivo**: Layout otimizado para celulares (com barra inferior estilo app nativo), tablets e telas ultrawide.
+- ⭐ **Minha Lista & Progresso do Aluno**: Salve suas referências favoritas e acompanhe seu percentual de aulas concluídas com persistência local (`localStorage`).
+- ➕ **Adicionar Novas Referências**: Cadastre novos tutoriais e boards do YouTube e Pinterest direto pela interface.
+
+---
+
+## 🚀 Como Visualizar Online (GitHub Pages)
+
+Este projeto está pronto para ser publicado no **GitHub Pages**:
+
+1. Crie um novo repositório no seu GitHub (ex.: `motionflix`).
+2. Suba os arquivos do projeto para o branch `main`.
+3. No seu repositório no GitHub, acesse **Settings** > **Pages**.
+4. Em **Branch**, selecione `main` e a pasta `/ (root)`.
+5. Clique em **Save**. Em instantes, a sua página estará no ar no link:
+   `https://<seu-usuario>.github.io/motionflix/`
+
+---
+
+## 🛠️ Execução Local
+
+Você também pode rodar localmente com 1 clique:
+- Dê um duplo clique no arquivo `INICIAR_MOTIONFLIX.bat`.
+- O navegador abrirá automaticamente em `http://localhost:3000`.
+
+---
+
+Desenvolvido para estudo e aceleração criativa em Motion Design.

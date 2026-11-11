@@ -1,0 +1,5 @@
+# Logs e ferramentas auxiliares locais
+_tools/
+*.pyc
+__pycache__/
+.cache/
