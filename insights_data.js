@@ -4,6 +4,88 @@
 
 const DEFAULT_INSIGHTS = [
   {
+    id: "ins-007",
+    title: "Adobe MAX 2026: O 'USB-C da IA' chega à Creative Cloud com MCP no After Effects, Premiere e Photoshop",
+    slug: "adobe-max-2026-mcp-creative-cloud-after-effects",
+    category: "Workflows & Ferramentas",
+    badgeColor: "from-amber-500 via-orange-500 to-red-600",
+    date: "11 de Novembro de 2026",
+    readTime: "5 min de leitura",
+    author: "Motion Radar",
+    coverImage: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1200&auto=format&fit=crop&q=80",
+    summary: "Como o suporte ao Model Context Protocol (MCP) e ecossistemas abertos de IA transformam o After Effects, Premiere, Photoshop e Illustrator em ambientes nativamente orquestráveis por agentes de IA.",
+    keyTakeaways: [
+      "O MCP opera como o 'USB-C da IA': uma ponte bidirecional universal que permite agentes como Claude, Antigravity e Cursor controlarem softwares Adobe diretamente.",
+      "Eliminação de gambiarras: Adeus a painéis CEP frágeis e scripts legados; a IA passa a ter contexto em tempo real de timelines, camadas e expressões.",
+      "Disponibilidade imediata: Embora a Adobe tenha entrado em Private Beta, desenvolvedores já podem rodar servidores open-source na versão estável do After Effects hoje mesmo."
+    ],
+    contentHtml: `
+      <p class="text-lg text-slate-300 leading-relaxed mb-6 font-medium">Durante o <strong>Adobe MAX 2026</strong> em Miami Beach, a Adobe anunciou uma das mudanças de paradigma mais aguardadas por criadores e estúdios: o suporte ao <strong>Model Context Protocol (MCP)</strong> local em seus principais aplicativos de desktop, com destaque absoluto para o <strong>After Effects, Premiere Pro, Photoshop e Illustrator</strong>.</p>
+      
+      <h3 class="text-xl font-bold text-white mt-8 mb-4">🔌 O que é o MCP e por que ele é chamado de 'USB-C da IA'?</h3>
+      <p class="text-slate-300 leading-relaxed mb-4">Para quem não é desenvolvedor, a metáfora mais simples é imaginar o MCP como uma tomada universal. No passado recente, cada tentativa de conectar um modelo de linguagem ou agente de IA ao After Effects exigia soluções improvisadas: scripts em ExtendScript (<code>.jsx</code>), painéis legados em CEP, pontes em WebSockets ou macros frágeis que quebravam a cada atualização do software.</p>
+      <p class="text-slate-300 leading-relaxed mb-4">Com o MCP, a inteligência artificial ganha um protocolo de comunicação aberto e estruturado. O agente de IA não apenas "conversa" com o software, mas enxerga a estrutura de arquivos abertos, lê o timecode da timeline, inspeciona a árvore de camadas e executa operações com total precisão matemática.</p>
+
+      <h3 class="text-xl font-bold text-white mt-8 mb-4">⚡ O Impacto no Pacote Adobe: O que muda na prática</h3>
+      <div class="overflow-x-auto my-6">
+        <table class="w-full text-left border-collapse border border-white/10 rounded-xl overflow-hidden bg-slate-900/60 text-sm">
+          <thead>
+            <tr class="bg-white/5 text-slate-200 border-b border-white/10">
+              <th class="p-3 font-semibold">Aplicativo</th>
+              <th class="p-3 font-semibold">O que o Agente de IA consegue fazer via MCP</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5 text-slate-300">
+            <tr>
+              <td class="p-3 font-medium text-amber-400">After Effects</td>
+              <td class="p-3">Criar keyframes, ajustar curvas de easing no Graph Editor, estruturar riggings de texto e diagnosticar erros em expressões JS.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-medium text-orange-400">Premiere Pro</td>
+              <td class="p-3">Montar sequências de corte, organizar bins de mídia, sincronizar múltiplas câmeras e aplicar templates de áudio automaticamente.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-medium text-blue-400">Photoshop</td>
+              <td class="p-3">Editar camadas PSD nativas, aplicar ajustes de iluminação e isolamento de objetos mantendo tudo 100% não-destrutivo.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-medium text-yellow-400">Illustrator</td>
+              <td class="p-3">Manipular caminhos vetoriais, traduzir textos em lote por pranchetas e gerar dezenas de assets a partir de planilhas CSV.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-xl font-bold text-white mt-8 mb-4">🛠️ Precisa de versão Beta ou dá para rodar na estável hoje?</h3>
+      <p class="text-slate-300 leading-relaxed mb-4">Embora a integração oficial nativa da Adobe esteja em <em>Private Beta</em>, motion designers não precisam esperar. A comunidade open-source já desenvolveu servidores MCP maduros que funcionam na <strong>versão estável</strong> do After Effects que você já tem instalada na sua máquina.</p>
+      
+      <p class="text-slate-300 leading-relaxed mb-4">Basta rodar um servidor local (Node.js/Python) e apontar no arquivo de configuração do seu cliente de IA favorito (como <strong>Claude Desktop, Cursor ou Antigravity</strong>):</p>
+
+      <pre class="bg-black/70 p-4 rounded-xl border border-slate-800 text-xs text-orange-400 font-mono overflow-x-auto mb-6">
+// Exemplo de configuração de MCP no Claude Desktop ou Antigravity:
+{
+  "mcpServers": {
+    "after-effects": {
+      "command": "npx",
+      "args": ["-y", "@brandkickagency/aftereffects-mcp"]
+    }
+  }
+}
+      </pre>
+
+      <div class="p-4 rounded-xl bg-orange-500/10 border border-orange-500/20 text-orange-200 my-6">
+        <strong>💡 Visão de Futuro:</strong> O motion designer deixa de ser um executor de cliques repetitivos na timeline e se consolida como Diretor Criativo e Orquestrador de Agentes. O domínio de ritmo, estética e sensibilidade visual continua sendo o ativo mais valioso do mercado.
+      </div>
+    `,
+    relatedLinks: [
+      { title: "Adobe MAX 2026 Portal", url: "https://www.adobe.com/max.html" },
+      { title: "GitHub · brandkickagency/aftereffects-mcp", url: "https://github.com/brandkickagency/aftereffects-mcp" },
+      { title: "GitHub · matrayu/adobe-mcp", url: "https://github.com/matrayu/adobe-mcp" },
+      { title: "GitHub · adobe/generator-app-remote-mcp-server-generic", url: "https://github.com/adobe/generator-app-remote-mcp-server-generic" }
+    ],
+    tags: ["Adobe MAX", "MCP", "After Effects", "Premiere Pro", "Photoshop", "Automação", "Open Source"]
+  },
+  {
     id: "ins-001",
     title: "Kling AI vs Runway Gen-3: Como a IA Generativa está revolucionando comerciais de Motion Design",
     slug: "kling-vs-runway-gen3-motion-design",
