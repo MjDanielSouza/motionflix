@@ -12,15 +12,19 @@ Sempre que Daniel abrir uma conversa neste repositório enviando um link (YouTub
 1. **Atue como Editor Técnico de Motion & IA**:
    - Analise tecnicamente o material fornecido.
    - Extraia os pontos essenciais: o que torna o movimento único, técnicas de Graph Editor, física de mola (springs), nós do ComfyUI, bibliotecas de código ou implicações para o mercado.
-2. **Estrutura Padrão de Matéria (`insights_data.js`)**:
+2. **Estrutura Padrão de Matéria (`insights_data.js`) & Regra Ética de Assinatura**:
    - `id`: `"ins-" + timestamp` ou sequencial.
    - `title`: Título chamativo, estilo Tech Radar / The Verge.
    - `category`: Uma das 4 principais (`"Inteligência Artificial"`, `"Repositórios Open Source"`, `"Workflows & Ferramentas"`, `"Mercado & Tendências"`).
    - `badgeColor`: Gradiente Tailwind (ex.: `"from-purple-500 to-indigo-600"`).
    - `readTime`: Ex.: `"4 min de leitura"`.
-   - `author`: `"Daniel Souza"`.
-   - `authorAvatar`: `"assets/daniel_souza.jpg"`.
-   - `authorInstagram`: `"https://www.instagram.com/7danielsouza/"`.
+   - **Regra de Autoria & Assinatura**:
+     - **Autoria de Daniel**: Quando o tema, estudo ou texto for produzido, revisado ou idealizado em conjunto com Daniel, atribua:
+       - `author`: `"Daniel Souza"`
+       - `authorAvatar`: `"assets/daniel_souza.jpg"`
+       - `authorInstagram`: `"https://www.instagram.com/7danielsouza/"`
+     - **Notícias Gerais / Curadoria da Redação**: Quando se tratar de uma notícia externa de tecnologia, release geral da indústria ou artigo sem envolvimento autoral direto de Daniel, atribua:
+       - `author`: `"Redação Motionflix"` (sem foto pessoal e sem link do Instagram pessoal).
    - `summary`: Resumo em 1 ou 2 frases (lide forte).
    - `keyTakeaways`: Array com 3 bullet points de aprendizados rápidos e acionáveis.
    - `contentHtml`: Texto rico do artigo com subtítulos (`<h3>`), parágrafos explicativos, blocos de código/prompts (`<pre>`) e caixas de destaque (`<div class="p-4 rounded-xl bg-indigo-500/10...">`).

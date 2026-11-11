@@ -66,41 +66,63 @@
 </head>
 <body class="bg-brand-dark text-slate-100 font-sans min-h-screen antialiased selection:bg-indigo-500 selection:text-white pb-24 md:pb-12">
 
-  <!-- ==================== HEADER ==================== -->
-  <header class="sticky top-0 z-40 bg-brand-dark/95 backdrop-blur-md border-b border-white/10 transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
+  <!-- ==================== HEADER (UNIFIED WITH INDEX.HTML) ==================== -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-brand-dark/95 backdrop-blur-md border-b border-brand-border/60">
+    <div class="max-w-[1920px] mx-auto px-3 sm:px-6 lg:px-10 h-14 sm:h-16 flex items-center justify-between gap-2 sm:gap-4">
       
-      <!-- Brand & Link to Main App -->
-      <div class="flex items-center gap-3 sm:gap-6">
+      <!-- Logo & Brand -->
+      <div class="flex items-center gap-4 sm:gap-8 shrink-0">
         <a href="index.html" class="flex items-center gap-2 group">
-          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-gradient-to-tr from-brand-red to-rose-600 flex items-center justify-center font-black text-lg sm:text-xl text-white shadow-lg shadow-brand-red/30 tracking-tighter group-hover:scale-105 transition-transform">
-            M
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-red to-rose-600 flex items-center justify-center shadow-lg shadow-brand-red/30 group-hover:scale-105 transition-transform">
+            <svg class="w-4 h-4 text-white fill-current" viewBox="0 0 24 24"><path d="M4 3h4l4 7-4 7H4l4-7-4-7zm12 0h4l-4 7 4 7h-4l-4-7 4-7z"/></svg>
           </div>
-          <div class="flex flex-col">
-            <span class="font-display font-extrabold text-lg sm:text-xl tracking-wider text-white flex items-center gap-1.5">
+          <div class="flex items-center gap-1.5">
+            <span class="font-display font-black text-lg sm:text-xl tracking-wider text-white">
               MOTION<span class="text-brand-red">FLIX</span>
-              <span class="text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">INSIGHTS</span>
             </span>
+            <span class="hidden sm:inline-block text-[9px] uppercase font-bold tracking-widest px-1.5 py-0.5 rounded bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">INSIGHTS</span>
           </div>
         </a>
 
-        <!-- Desktop Navigation Back Link -->
-        <a href="index.html" class="hidden sm:inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-white px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 transition-colors">
-          <span>🎬</span>
-          <span>Voltar ao Catálogo de Vídeos</span>
-        </a>
+        <!-- Desktop Navigation Tabs (Ordered: Insights 1º, Criadores 2º, Estilos 3º, Catálogo 4º, Minha Lista 5º) -->
+        <nav class="hidden lg:flex items-center gap-1.5 text-sm font-medium text-slate-300">
+          <a href="insights.html" id="tab-insights" class="px-3.5 py-1.5 rounded-full bg-white/15 text-white border border-white/20 transition-all flex items-center gap-1.5 font-semibold shadow-md">
+            <span>⚡ Radar & Insights IA</span>
+            <span class="text-[9px] px-1.5 py-0.2 rounded-full bg-indigo-500 text-white font-extrabold uppercase">Ativo</span>
+          </a>
+          <a href="index.html?view=creators" id="tab-creators" class="px-3.5 py-1.5 rounded-full hover:bg-white/5 hover:text-white transition-all flex items-center gap-1.5">
+            <span>👥 Profissionais</span>
+            <span class="text-[10px] px-1.5 py-0.2 rounded-full bg-white/10 text-slate-300 font-bold">Criadores</span>
+          </a>
+          <a href="index.html?view=styles" id="tab-styles" class="px-3.5 py-1.5 rounded-full hover:bg-white/5 hover:text-white transition-all flex items-center gap-1.5">
+            <span>🎨 Estilos</span>
+            <span class="text-[10px] px-1.5 py-0.2 rounded-full bg-white/10 text-slate-300 font-bold">12 Tipos</span>
+          </a>
+          <a href="index.html?view=grid" id="tab-grid" class="px-3.5 py-1.5 rounded-full hover:bg-white/5 hover:text-white transition-all flex items-center gap-1.5">
+            <span>🎬 Catálogo Geral</span>
+            <span class="text-[11px] px-1.5 py-0.2 rounded-full bg-slate-800 text-slate-300 font-bold">120</span>
+          </a>
+          <a href="index.html?view=saved" id="tab-saved" class="px-3.5 py-1.5 rounded-full hover:bg-white/5 hover:text-white flex items-center gap-1.5 transition-all">
+            <span>⭐ Minha Lista</span>
+          </a>
+        </nav>
       </div>
 
-      <!-- Action Buttons -->
+      <!-- Right Action Items -->
       <div class="flex items-center gap-2 sm:gap-3">
+        <a href="index.html" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white text-xs font-semibold border border-white/10 transition-colors">
+          <span>🎬 Catálogo de Vídeos</span>
+        </a>
         <button onclick="openNewInsightModal()" class="inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold text-xs sm:text-sm shadow-lg shadow-indigo-600/20 transition-all transform hover:-translate-y-0.5">
           <span>➕</span>
           <span class="hidden xs:inline">Novo Insight / Matéria</span>
           <span class="xs:hidden">Novo</span>
         </button>
       </div>
+
     </div>
   </header>
+  <div class="h-14 sm:h-16"></div>
 
   <!-- ==================== SUB-HEADER / BANNER ==================== -->
   <section class="relative overflow-hidden border-b border-white/5 bg-gradient-to-b from-indigo-950/20 via-brand-dark to-brand-dark py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
@@ -360,21 +382,29 @@
     </div>
   </div>
 
-  <!-- ==================== MOBILE BOTTOM NAVBAR ==================== -->
-  <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-brand-dark/95 backdrop-blur-lg border-t border-white/10 px-6 py-2.5 flex items-center justify-around">
-    <a href="index.html" class="flex flex-col items-center gap-1 text-slate-400 hover:text-white">
-      <span class="text-lg">🎬</span>
-      <span class="text-[10px] font-semibold">Aulas & Vídeos</span>
+  <!-- ==================== MOBILE BOTTOM NAVBAR (UNIFIED) ==================== -->
+  <nav class="fixed bottom-0 left-0 right-0 z-40 bg-brand-dark/95 backdrop-blur-xl border-t border-brand-border/80 px-2 py-1.5 flex items-center justify-around md:hidden text-[10px] font-medium text-slate-400 shadow-2xl">
+    <a href="insights.html" class="flex flex-col items-center gap-0.5 py-1 px-2.5 text-indigo-400 font-bold transition-colors">
+      <span class="text-lg leading-5">⚡</span>
+      <span>Insights</span>
     </a>
-    <a href="insights.html" class="flex flex-col items-center gap-1 text-indigo-400">
-      <span class="text-lg">⚡</span>
-      <span class="text-[10px] font-bold">Insights IA</span>
+    <a href="index.html?view=creators" class="flex flex-col items-center gap-0.5 py-1 px-2.5 hover:text-white transition-colors">
+      <span class="text-lg leading-5">👥</span>
+      <span>Criadores</span>
     </a>
-    <button onclick="openNewInsightModal()" class="flex flex-col items-center gap-1 text-slate-400 hover:text-white">
-      <span class="text-lg">➕</span>
-      <span class="text-[10px] font-semibold">Publicar</span>
+    <a href="index.html?view=styles" class="flex flex-col items-center gap-0.5 py-1 px-2.5 hover:text-white transition-colors">
+      <span class="text-lg leading-5">🎨</span>
+      <span>Estilos</span>
+    </a>
+    <a href="index.html?view=grid" class="flex flex-col items-center gap-0.5 py-1 px-2.5 hover:text-white transition-colors">
+      <span class="text-lg leading-5">🎬</span>
+      <span>Catálogo</span>
+    </a>
+    <button onclick="openNewInsightModal()" class="flex flex-col items-center gap-0.5 py-1 px-2.5 hover:text-white transition-colors">
+      <span class="text-lg leading-5">➕</span>
+      <span>Publicar</span>
     </button>
-  </div>
+  </nav>
 
   <!-- SCRIPT -->
   <script src="insights_data.js"></script>
@@ -447,8 +477,13 @@
                 <span>→</span>
               </button>
               <div class="flex items-center gap-2 text-xs text-slate-300 font-medium">
-                <img src="${featured.authorAvatar || 'assets/daniel_souza.jpg'}" alt="${featured.author}" class="w-6 h-6 rounded-full object-cover border border-white/20">
-                <span>Por <strong>${featured.author || 'Daniel Souza'}</strong></span>
+                ${featured.author === 'Daniel Souza' ? `
+                  <img src="${featured.authorAvatar || 'assets/daniel_souza.jpg'}" alt="${featured.author}" class="w-6 h-6 rounded-full object-cover border border-white/20">
+                  <span>Por <strong>Daniel Souza</strong></span>
+                ` : `
+                  <div class="w-6 h-6 rounded-full bg-indigo-500/30 border border-indigo-400/40 flex items-center justify-center text-[10px] text-indigo-300 font-bold">MF</div>
+                  <span>Por <strong>${featured.author || 'Redação Motionflix'}</strong></span>
+                `}
                 <span class="text-slate-500">•</span>
                 <span class="text-slate-400">${featured.date}</span>
               </div>
@@ -480,8 +515,13 @@
           <div class="p-5 flex-1 flex flex-col justify-between">
             <div>
               <div class="text-[11px] text-slate-400 mb-1.5 font-medium flex items-center gap-1.5">
-                <img src="${item.authorAvatar || 'assets/daniel_souza.jpg'}" alt="${item.author}" class="w-4 h-4 rounded-full object-cover">
-                <span>${item.author || 'Daniel Souza'}</span>
+                ${item.author === 'Daniel Souza' ? `
+                  <img src="${item.authorAvatar || 'assets/daniel_souza.jpg'}" alt="${item.author}" class="w-4 h-4 rounded-full object-cover">
+                  <span>Daniel Souza</span>
+                ` : `
+                  <span class="w-4 h-4 rounded-full bg-indigo-500/30 border border-indigo-400/40 flex items-center justify-center text-[8px] text-indigo-300 font-bold">MF</span>
+                  <span>${item.author || 'Redação Motionflix'}</span>
+                `}
                 <span>•</span>
                 <span>${item.date}</span>
               </div>
@@ -575,16 +615,22 @@
         <span class="px-2.5 py-1 rounded-full text-xs bg-white/5 text-slate-400 border border-white/5 font-medium">#${t}</span>
       `).join('');
 
-      // Update Author Signature Box
-      const authorName = item.author || 'Daniel Souza';
-      const authorAvatar = item.authorAvatar || 'assets/daniel_souza.jpg';
-      const authorInstagram = item.authorInstagram || 'https://www.instagram.com/7danielsouza/';
-
-      document.getElementById('modal-author-name').innerText = authorName;
-      document.getElementById('modal-author-avatar').src = authorAvatar;
-      document.getElementById('modal-author-instagram').href = authorInstagram;
-      const igHandle = authorInstagram.replace(/\/$/, '').split('/').pop();
-      document.getElementById('modal-author-instagram').querySelector('span').innerText = `@${igHandle}`;
+      // Update Author Signature Box (Ethical rule: show personal box only for Daniel Souza)
+      const authorBox = document.getElementById('modal-author-box');
+      if (item.author === 'Daniel Souza' || (item.authorInstagram && item.authorInstagram.includes('7danielsouza'))) {
+        if (authorBox) {
+          authorBox.classList.remove('hidden');
+          document.getElementById('modal-author-name').innerText = 'Daniel Souza';
+          document.getElementById('modal-author-avatar').src = item.authorAvatar || 'assets/daniel_souza.jpg';
+          document.getElementById('modal-author-instagram').href = item.authorInstagram || 'https://www.instagram.com/7danielsouza/';
+          const igHandle = (item.authorInstagram || 'https://www.instagram.com/7danielsouza/').replace(/\/$/, '').split('/').pop();
+          document.getElementById('modal-author-instagram').querySelector('span').innerText = `@${igHandle}`;
+        }
+      } else {
+        if (authorBox) {
+          authorBox.classList.add('hidden');
+        }
+      }
 
       document.getElementById('reading-modal').classList.remove('hidden');
       document.body.style.overflow = 'hidden';
