@@ -1,5 +1,6 @@
 # Logs e ferramentas auxiliares locais
-_tools/
+_tools/*
+!_tools/adicionar_insight.py
 *.pyc
 __pycache__/
 .cache/
