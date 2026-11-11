@@ -18,6 +18,9 @@ Sempre que Daniel abrir uma conversa neste repositório enviando um link (YouTub
    - `category`: Uma das 4 principais (`"Inteligência Artificial"`, `"Repositórios Open Source"`, `"Workflows & Ferramentas"`, `"Mercado & Tendências"`).
    - `badgeColor`: Gradiente Tailwind (ex.: `"from-purple-500 to-indigo-600"`).
    - `readTime`: Ex.: `"4 min de leitura"`.
+   - `author`: `"Daniel Souza"`.
+   - `authorAvatar`: `"assets/daniel_souza.jpg"`.
+   - `authorInstagram`: `"https://www.instagram.com/7danielsouza/"`.
    - `summary`: Resumo em 1 ou 2 frases (lide forte).
    - `keyTakeaways`: Array com 3 bullet points de aprendizados rápidos e acionáveis.
    - `contentHtml`: Texto rico do artigo com subtítulos (`<h3>`), parágrafos explicativos, blocos de código/prompts (`<pre>`) e caixas de destaque (`<div class="p-4 rounded-xl bg-indigo-500/10...">`).

@@ -36,6 +36,10 @@ Esta skill transforma o assistente em um **editor técnico de motion design e in
 
 3. **Inclusão em `insights_data.js`**:
    - Carregue o arquivo [insights_data.js](file:///d:/ESTUDOS/MOTION/insights_data.js).
+   - Defina os metadados fixos de autoria:
+     - `author`: `"Daniel Souza"`
+     - `authorAvatar`: `"assets/daniel_souza.jpg"`
+     - `authorInstagram`: `"https://www.instagram.com/7danielsouza/"`
    - Adicione o novo objeto no topo da lista `DEFAULT_INSIGHTS`.
    - Salve o arquivo mantendo a integridade sintática do JavaScript.
 
