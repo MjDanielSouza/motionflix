@@ -150,27 +150,23 @@
           </div>
         </a>
 
-        <!-- Desktop Navigation Tabs -->
-        <nav class="hidden lg:flex items-center gap-1.5 text-sm font-medium text-slate-300">
-          <a href="insights.html" id="tab-insights" class="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-indigo-500/20 to-purple-500/20 text-indigo-300 hover:text-white border border-indigo-500/30 hover:border-indigo-400 transition-all flex items-center gap-1.5 font-semibold">
-            <span>⚡ Radar & Insights IA</span>
-            <span class="text-[9px] px-1.5 py-0.2 rounded-full bg-indigo-500 text-white font-extrabold uppercase">Novo</span>
+        <!-- Desktop Navigation Tabs (Standardized & Motion Design English Terms) -->
+        <nav class="hidden lg:flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-300">
+          <a href="insights.html" id="tab-insights" class="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 hover:text-white border border-white/10 transition-all flex items-center gap-1.5">
+            <span>⚡ AI Insights</span>
+            <span class="text-[9px] px-1.5 py-0.5 rounded-full bg-indigo-500/30 text-indigo-300 border border-indigo-500/40 font-bold uppercase">Daily</span>
           </a>
-          <button onclick="showCreatorsView()" id="tab-creators" class="px-3.5 py-1.5 rounded-full hover:bg-white/5 hover:text-white transition-all flex items-center gap-1.5">
-            <span>👥 Profissionais</span>
-            <span class="text-[10px] px-1.5 py-0.2 rounded-full bg-white/10 text-slate-300 font-bold">Criadores</span>
+          <button onclick="showCreatorsView()" id="tab-creators" class="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 hover:text-white border border-white/10 transition-all flex items-center gap-1.5">
+            <span>👥 Creators</span>
+            <span class="text-[9px] px-1.5 py-0.5 rounded-full bg-white/10 text-slate-400 font-bold">50</span>
           </button>
-          <button onclick="showStylesView()" id="tab-styles" class="px-3.5 py-1.5 rounded-full hover:bg-white/5 hover:text-white transition-all flex items-center gap-1.5">
-            <span>🎨 Estilos</span>
-            <span class="text-[10px] px-1.5 py-0.2 rounded-full bg-white/10 text-slate-300 font-bold">12 Tipos</span>
+          <button onclick="showStylesView()" id="tab-styles" class="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 hover:text-white border border-white/10 transition-all flex items-center gap-1.5">
+            <span>🎨 Visual Styles</span>
+            <span class="text-[9px] px-1.5 py-0.5 rounded-full bg-white/10 text-slate-400 font-bold">17</span>
           </button>
-          <button onclick="setView('grid')" id="tab-grid" class="px-3.5 py-1.5 rounded-full hover:bg-white/5 hover:text-white transition-all flex items-center gap-1.5">
-            <span>🎬 Catálogo Geral</span>
-            <span class="text-[11px] px-1.5 py-0.2 rounded-full bg-slate-800 text-slate-300 font-bold">120</span>
-          </button>
-          <button onclick="showMyList()" id="tab-saved" class="px-3.5 py-1.5 rounded-full hover:bg-white/5 hover:text-white flex items-center gap-1.5 transition-all">
-            <span>⭐ Minha Lista</span>
-            <span id="saved-count-pill" class="text-xs px-1.5 py-0.2 rounded-full bg-brand-red text-white font-bold hidden">0</span>
+          <button onclick="showCatalogView()" id="tab-grid" class="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 hover:text-white border border-white/10 transition-all flex items-center gap-1.5">
+            <span>🎬 Showcase</span>
+            <span class="text-[9px] px-1.5 py-0.5 rounded-full bg-white/10 text-slate-400 font-bold">120</span>
           </button>
         </nav>
       </div>
@@ -200,28 +196,23 @@
     </div>
   </header>
 
-  <!-- ==================== MOBILE BOTTOM NAVBAR ==================== -->
+  <!-- ==================== MOBILE BOTTOM NAVBAR (STANDARDIZED) ==================== -->
   <nav class="fixed bottom-0 left-0 right-0 z-40 bg-brand-dark/95 backdrop-blur-xl border-t border-brand-border/80 px-2 py-1.5 flex items-center justify-around md:hidden text-[10px] font-medium text-slate-400 shadow-2xl">
-    <a href="insights.html" class="flex flex-col items-center gap-0.5 py-1 px-2.5 text-indigo-400 hover:text-white transition-colors">
+    <a href="insights.html" class="flex flex-col items-center gap-0.5 py-1 px-3 text-indigo-400 hover:text-white transition-colors">
       <span class="text-lg leading-5">⚡</span>
       <span class="font-bold">Insights</span>
     </a>
-    <button onclick="showCreatorsView()" id="mobile-nav-creators" class="flex flex-col items-center gap-0.5 py-1 px-2.5 hover:text-white transition-colors">
+    <button onclick="showCreatorsView()" id="mobile-nav-creators" class="flex flex-col items-center gap-0.5 py-1 px-3 hover:text-white transition-colors">
       <span class="text-lg leading-5">👥</span>
-      <span>Criadores</span>
+      <span>Creators</span>
     </button>
-    <button onclick="showStylesView()" id="mobile-nav-styles" class="flex flex-col items-center gap-0.5 py-1 px-2.5 hover:text-white transition-colors">
+    <button onclick="showStylesView()" id="mobile-nav-styles" class="flex flex-col items-center gap-0.5 py-1 px-3 hover:text-white transition-colors">
       <span class="text-lg leading-5">🎨</span>
-      <span>Estilos</span>
+      <span>Styles</span>
     </button>
-    <button onclick="setView('grid')" id="mobile-nav-grid" class="flex flex-col items-center gap-0.5 py-1 px-2.5 hover:text-white transition-colors">
+    <button onclick="showCatalogView()" id="mobile-nav-grid" class="flex flex-col items-center gap-0.5 py-1 px-3 hover:text-white transition-colors">
       <span class="text-lg leading-5">🎬</span>
-      <span>Catálogo</span>
-    </button>
-    <button onclick="showMyList()" id="mobile-nav-saved" class="flex flex-col items-center gap-0.5 py-1 px-2.5 hover:text-white transition-colors relative">
-      <svg class="w-5 h-5 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/></svg>
-      <span>Salvos</span>
-      <span id="mobile-saved-badge" class="absolute top-0 right-2 w-2 h-2 rounded-full bg-brand-red hidden"></span>
+      <span>Showcase</span>
     </button>
   </nav>
 
@@ -484,99 +475,82 @@
     <!-- GRID VIEW: ALL REFERENCES CATALOG -->
     <div id="grid-view" class="hidden space-y-6 pt-4 sm:pt-6">
       
-      <!-- Filter and View Header -->
+      <!-- Filter and View Header (Clean Motion English) -->
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 sm:p-5 rounded-2xl bg-brand-card border border-brand-border">
         <div>
           <h2 id="grid-view-title" class="font-display font-bold text-xl sm:text-2xl text-white flex items-center gap-2">
-            Catálogo Geral de Referências
+            Motion Showcase & References
             <span id="grid-count-badge" class="text-xs px-2.5 py-0.5 rounded-full bg-brand-red text-white font-bold">120</span>
           </h2>
-          <p id="grid-view-subtitle" class="text-xs text-slate-400 mt-1">Navegue pelas referências organizadas por profissionais, estilos visuais e data de publicação.</p>
+          <p id="grid-view-subtitle" class="text-xs text-slate-400 mt-1">Browse motion references by creators, visual styles, and publication dates.</p>
         </div>
 
         <div class="grid grid-cols-1 xs:grid-cols-2 md:flex flex-wrap items-center gap-2 sm:gap-3">
-          <!-- Sort Filter (Mais Recentes) -->
+          <!-- Sort Filter -->
           <select id="sort-filter" onchange="applyGridFilters()" class="w-full md:w-auto bg-brand-dark text-xs text-slate-200 border border-brand-border rounded-lg px-3 py-2.5 sm:py-2 focus:outline-none focus:border-brand-red font-semibold">
-            <option value="recent">⏱️ Mais Recentes Primeiro</option>
-            <option value="default">🔥 Em Destaque</option>
-            <option value="alpha">🔤 Título (A-Z)</option>
+            <option value="recent">⏱️ Newest First</option>
+            <option value="featured">⭐ Featured First</option>
+            <option value="title-asc">🔤 Title (A-Z)</option>
+            <option value="title-desc">🔤 Title (Z-A)</option>
           </select>
 
           <!-- Type Filter Dropdown -->
           <select id="type-filter" onchange="applyGridFilters()" class="w-full md:w-auto bg-brand-dark text-xs text-slate-200 border border-brand-border rounded-lg px-3 py-2.5 sm:py-2 focus:outline-none focus:border-brand-red">
-            <option value="all">Todos os Tipos</option>
-            <option value="Tutorial">🎓 Apenas Tutoriais</option>
-            <option value="Exemplo">🎬 Apenas Exemplos</option>
+            <option value="all">All Types (120)</option>
+            <option value="Tutorial">🎓 Tutorials & Masterclasses (44)</option>
+            <option value="Exemplo">🎬 Case Studies & Demos (76)</option>
           </select>
 
-          <!-- Creator Filter -->
+          <!-- Creator Filter (Dynamically populated) -->
           <select id="creator-filter" onchange="applyGridFilters()" class="w-full md:w-auto bg-brand-dark text-xs text-slate-200 border border-brand-border rounded-lg px-3 py-2.5 sm:py-2 focus:outline-none focus:border-brand-red">
-            <option value="all">👥 Todos os Criadores</option>
+            <option value="all">👥 All Creators (50)</option>
+          </select>
+
+          <!-- Style Filter Dropdown (Dynamically populated) -->
+          <select id="style-filter" onchange="applyGridFilters()" class="w-full md:w-auto bg-brand-dark text-xs text-slate-200 border border-brand-border rounded-lg px-3 py-2.5 sm:py-2 focus:outline-none focus:border-brand-red">
+            <option value="all">🎨 All Visual Styles (17)</option>
           </select>
 
           <!-- Platform Filter -->
           <select id="platform-filter" onchange="applyGridFilters()" class="w-full md:w-auto bg-brand-dark text-xs text-slate-200 border border-brand-border rounded-lg px-3 py-2.5 sm:py-2 focus:outline-none focus:border-brand-red">
-            <option value="all">Todas as Plataformas</option>
+            <option value="all">All Platforms</option>
             <option value="YouTube">YouTube</option>
-            <option value="Instagram">Instagram</option>
+            <option value="Instagram">Instagram Reels</option>
+            <option value="Pinterest">Pinterest Boards</option>
+            <option value="Template">AE Templates</option>
             <option value="TikTok">TikTok</option>
-            <option value="Pinterest">Pinterest</option>
-            <option value="Template">Template</option>
-          </select>
-
-          <!-- Style Filter Dropdown -->
-          <select id="style-filter" onchange="applyGridFilters()" class="w-full md:w-auto bg-brand-dark text-xs text-slate-200 border border-brand-border rounded-lg px-3 py-2.5 sm:py-2 focus:outline-none focus:border-brand-red">
-            <option value="all">Todos os Estilos</option>
-            <option value="Interface de produto">Interface de Produto</option>
-            <option value="Apple claro">Apple Claro</option>
-            <option value="SaaS">SaaS</option>
-            <option value="Sound design">Sound Design</option>
-            <option value="3D">3D</option>
-            <option value="Escuro com neon">Escuro com Neon</option>
-            <option value="Tipografia cinética">Tipografia Cinética</option>
-            <option value="Colagem">Colagem</option>
-            <option value="Cinematográfico">Cinematográfico</option>
-            <option value="Anúncio">Anúncio</option>
-          </select>
-
-          <!-- Status Filter -->
-          <select id="status-filter" onchange="applyGridFilters()" class="w-full md:w-auto bg-brand-dark text-xs text-slate-200 border border-brand-border rounded-lg px-3 py-2.5 sm:py-2 focus:outline-none focus:border-brand-red">
-            <option value="all">Todos os Status</option>
-            <option value="saved">⭐ Apenas Salvos</option>
-            <option value="completed">✓ Apenas Concluídos</option>
-            <option value="pending">⏳ Apenas Pendentes</option>
           </select>
 
           <!-- Export Button -->
           <button onclick="exportToJSON()" class="w-full md:w-auto justify-center px-3 py-2.5 sm:py-2 rounded-lg bg-white/5 hover:bg-white/10 text-xs text-slate-300 hover:text-white border border-white/10 flex items-center gap-1.5 transition-all">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-            Exportar JSON
+            Export JSON
           </button>
         </div>
       </div>
 
-      <!-- SUBDIVISÃO 1: CRIADORES & PROFISSIONAIS -->
-      <div id="creators-section" class="p-4 sm:p-5 rounded-2xl bg-brand-card/70 border border-brand-border/80 space-y-3">
-        <div class="flex items-center justify-between">
+      <!-- SUBDIVISION 1: TOP CREATORS & MOTION ARTISTS -->
+      <div id="creators-section" class="p-4 sm:p-5 rounded-2xl bg-brand-card/70 border border-brand-border/80 space-y-3 transition-all">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
           <h3 class="text-xs sm:text-sm font-bold font-display text-white flex items-center gap-2">
             <span>👥</span>
-            <span>Subdivisão por Profissionais & Criadores</span>
+            <span>Top Creators & Motion Studios</span>
           </h3>
-          <span class="text-[11px] text-slate-400">Selecione para explorar o trabalho do autor</span>
+          <span class="text-[11px] text-slate-400">Filter keyframe masters, creative directors and AI motion engineers</span>
         </div>
         <div id="creator-pills-container" class="flex flex-wrap gap-1.5 sm:gap-2">
           <!-- Populated via JS -->
         </div>
       </div>
 
-      <!-- SUBDIVISÃO 2: ESTILOS VISUAIS & LINGUAGENS -->
-      <div id="styles-section" class="p-4 sm:p-5 rounded-2xl bg-brand-card/70 border border-brand-border/80 space-y-3">
-        <div class="flex items-center justify-between">
+      <!-- SUBDIVISION 2: VISUAL STYLES & ART DIRECTION -->
+      <div id="styles-section" class="p-4 sm:p-5 rounded-2xl bg-brand-card/70 border border-brand-border/80 space-y-3 transition-all">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
           <h3 class="text-xs sm:text-sm font-bold font-display text-white flex items-center gap-2">
             <span>🎨</span>
-            <span>Subdivisão por Estilos & Linguagens de Motion</span>
+            <span>Visual Styles & Art Direction</span>
           </h3>
-          <span class="text-[11px] text-slate-400">Selecione para filtrar por estética visual</span>
+          <span class="text-[11px] text-slate-400">Filter by aesthetic, physics easing and motion grammar</span>
         </div>
         <div id="style-pills-container" class="flex flex-wrap gap-1.5 sm:gap-2">
           <!-- Populated via JS -->
@@ -895,7 +869,32 @@
       sessionStorage.setItem('dismiss_proto_banner', 'true');
     }
 
-    // Populate Creators & Styles Subdivisions
+    // English mapping for motion design visual styles
+    const STYLE_LABELS_EN = {
+      "Interface de produto": "Product UI",
+      "Minimalista": "Minimalist",
+      "Tipografia cinética": "Kinetic Typography",
+      "Anúncio": "Commercial & Ads",
+      "Apple claro": "Apple Clean",
+      "Escuro com neon": "Cyber Neon",
+      "SaaS": "SaaS Explainer",
+      "3D": "3D & Shaders",
+      "Narrado": "Voiceover / Explainer",
+      "Edit musical": "Music Video Edit",
+      "Cinematográfico": "Cinematic",
+      "Sound design": "Sound Design",
+      "Colagem": "Mixed Media / Collage",
+      "Colagem estilo Vox": "Vox Style Collage",
+      "Documental": "Documentary",
+      "UGC": "UGC Style",
+      "Lousa": "Whiteboard"
+    };
+
+    function getStyleLabelEN(rawStyle) {
+      return STYLE_LABELS_EN[rawStyle] || rawStyle;
+    }
+
+    // Populate Creators & Styles Subdivisions dynamically
     function populateCreatorsAndStyles() {
       const creatorCounts = {};
       const styleCounts = {};
@@ -909,7 +908,7 @@
         });
       });
 
-      // 1. Populate Creator Filter select & Creator Pills
+      // 1. Populate Creator Filter Select & Creator Pills
       const creatorContainer = document.getElementById('creator-pills-container');
       const creatorSelect = document.getElementById('creator-filter');
       const sortedCreators = Object.entries(creatorCounts).sort((a, b) => b[1] - a[1]);
@@ -918,14 +917,14 @@
         creatorContainer.innerHTML = '';
         
         const allBtn = document.createElement('button');
-        allBtn.className = 'creator-pill active px-3 py-1 rounded-full text-xs font-semibold bg-brand-red text-white transition-all';
-        allBtn.innerText = `Todos (${allData.length})`;
+        allBtn.className = 'creator-pill active px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-red text-white shadow-lg shadow-brand-red/30 transition-all flex items-center gap-1.5';
+        allBtn.innerHTML = `<span>All Creators</span><span class="text-[10px] px-1.5 py-0.2 rounded-full bg-white/20 text-white font-bold">${allData.length}</span>`;
         allBtn.onclick = () => filterByCreator('all');
         creatorContainer.appendChild(allBtn);
 
         sortedCreators.forEach(([cName, count]) => {
           const btn = document.createElement('button');
-          btn.className = 'creator-pill px-3 py-1 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 hover:border-brand-red transition-all flex items-center gap-1.5';
+          btn.className = 'creator-pill px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 hover:border-brand-red transition-all flex items-center gap-1.5';
           btn.innerHTML = `<span>${cName}</span><span class="text-[10px] px-1.5 py-0.2 rounded-full bg-white/10 text-slate-400 font-bold">${count}</span>`;
           btn.onclick = () => filterByCreator(cName);
           creatorContainer.appendChild(btn);
@@ -933,7 +932,7 @@
       }
 
       if (creatorSelect) {
-        creatorSelect.innerHTML = '<option value="all">👥 Todos os Criadores</option>';
+        creatorSelect.innerHTML = '<option value="all">👥 All Creators (50)</option>';
         sortedCreators.forEach(([cName, count]) => {
           const opt = document.createElement('option');
           opt.value = cName;
@@ -942,31 +941,81 @@
         });
       }
 
-      // 2. Populate Style Pills
+      // 2. Populate Style Filter Select & Style Pills (ALL 17 STYLES)
       const styleContainer = document.getElementById('style-pills-container');
+      const styleSelect = document.getElementById('style-filter');
       const sortedStyles = Object.entries(styleCounts).sort((a, b) => b[1] - a[1]);
 
       if (styleContainer) {
         styleContainer.innerHTML = '';
 
         const allStyleBtn = document.createElement('button');
-        allStyleBtn.className = 'style-pill active px-3 py-1 rounded-full text-xs font-semibold bg-brand-red text-white transition-all';
-        allStyleBtn.innerText = `Todos (${allData.length})`;
+        allStyleBtn.className = 'style-pill active px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-red text-white shadow-lg shadow-brand-red/30 transition-all flex items-center gap-1.5';
+        allStyleBtn.innerHTML = `<span>All Styles</span><span class="text-[10px] px-1.5 py-0.2 rounded-full bg-white/20 text-white font-bold">${allData.length}</span>`;
         allStyleBtn.onclick = () => filterByStyle('all');
         styleContainer.appendChild(allStyleBtn);
 
         sortedStyles.forEach(([sName, count]) => {
+          const enLabel = getStyleLabelEN(sName);
           const btn = document.createElement('button');
-          btn.className = 'style-pill px-3 py-1 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 hover:border-brand-red transition-all flex items-center gap-1.5';
-          btn.innerHTML = `<span>${sName}</span><span class="text-[10px] px-1.5 py-0.2 rounded-full bg-white/10 text-slate-400 font-bold">${count}</span>`;
+          btn.className = 'style-pill px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 hover:border-brand-red transition-all flex items-center gap-1.5';
+          btn.innerHTML = `<span>${enLabel}</span><span class="text-[10px] px-1.5 py-0.2 rounded-full bg-white/10 text-slate-400 font-bold">${count}</span>`;
           btn.onclick = () => filterByStyle(sName);
           styleContainer.appendChild(btn);
         });
       }
+
+      if (styleSelect) {
+        styleSelect.innerHTML = '<option value="all">🎨 All Visual Styles (17)</option>';
+        sortedStyles.forEach(([sName, count]) => {
+          const enLabel = getStyleLabelEN(sName);
+          const opt = document.createElement('option');
+          opt.value = sName;
+          opt.innerText = `${enLabel} (${count})`;
+          styleSelect.appendChild(opt);
+        });
+      }
+    }
+
+    // Reset all filters to eliminate empty states
+    function resetAllGridFilters() {
+      if (document.getElementById('type-filter')) document.getElementById('type-filter').value = 'all';
+      if (document.getElementById('platform-filter')) document.getElementById('platform-filter').value = 'all';
+      if (document.getElementById('style-filter')) document.getElementById('style-filter').value = 'all';
+      if (document.getElementById('status-filter')) document.getElementById('status-filter').value = 'all';
+      if (document.getElementById('creator-filter')) document.getElementById('creator-filter').value = 'all';
+      if (document.getElementById('sort-filter')) document.getElementById('sort-filter').value = 'recent';
+      const searchInput = document.getElementById('search-input');
+      if (searchInput) {
+        searchInput.value = '';
+        const clearBtn = document.getElementById('clear-search-btn');
+        if (clearBtn) clearBtn.classList.add('hidden');
+      }
+
+      // Reset active pill classes
+      document.querySelectorAll('.creator-pill').forEach((btn, idx) => {
+        btn.className = idx === 0 
+          ? 'creator-pill active px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-red text-white shadow-lg shadow-brand-red/30 transition-all flex items-center gap-1.5'
+          : 'creator-pill px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 hover:border-brand-red transition-all flex items-center gap-1.5';
+      });
+      document.querySelectorAll('.style-pill').forEach((btn, idx) => {
+        btn.className = idx === 0 
+          ? 'style-pill active px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-red text-white shadow-lg shadow-brand-red/30 transition-all flex items-center gap-1.5'
+          : 'style-pill px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 hover:border-brand-red transition-all flex items-center gap-1.5';
+      });
+
+      applyGridFilters();
+    }
+
+    function showCatalogView() {
+      setView('grid');
+      resetAllGridFilters();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function showCreatorsView() {
       setView('grid');
+      resetAllGridFilters();
       const section = document.getElementById('creators-section');
       if (section) {
         section.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -977,6 +1026,7 @@
 
     function showStylesView() {
       setView('grid');
+      resetAllGridFilters();
       const section = document.getElementById('styles-section');
       if (section) {
         section.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -987,19 +1037,75 @@
 
     function filterByCreator(creator) {
       setView('grid');
+
+      // Clear conflicting filters so the selection is never empty
+      if (document.getElementById('style-filter')) document.getElementById('style-filter').value = 'all';
+      if (document.getElementById('type-filter')) document.getElementById('type-filter').value = 'all';
+      if (document.getElementById('status-filter')) document.getElementById('status-filter').value = 'all';
+      if (document.getElementById('platform-filter')) document.getElementById('platform-filter').value = 'all';
+
+      const searchInput = document.getElementById('search-input');
+      if (searchInput && searchInput.value) {
+        searchInput.value = '';
+        const clearBtn = document.getElementById('clear-search-btn');
+        if (clearBtn) clearBtn.classList.add('hidden');
+      }
+
       const select = document.getElementById('creator-filter');
       if (select) select.value = creator;
 
       document.querySelectorAll('.creator-pill').forEach(btn => {
-        if ((creator === 'all' && btn.innerText.startsWith('Todos')) || 
+        if ((creator === 'all' && btn.innerText.includes('All Creators')) || 
             (creator !== 'all' && btn.innerText.includes(creator))) {
-          btn.className = 'creator-pill active px-3 py-1 rounded-full text-xs font-semibold bg-brand-red text-white transition-all';
+          btn.className = 'creator-pill active px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-red text-white shadow-lg shadow-brand-red/30 transition-all flex items-center gap-1.5';
         } else {
-          btn.className = 'creator-pill px-3 py-1 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 hover:border-brand-red transition-all flex items-center gap-1.5';
+          btn.className = 'creator-pill px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 hover:border-brand-red transition-all flex items-center gap-1.5';
         }
       });
 
       applyGridFilters();
+
+      const gridCards = document.getElementById('grid-cards-container');
+      if (gridCards) {
+        gridCards.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function filterByStyle(styleName) {
+      setView('grid');
+
+      // Clear conflicting filters so the selection is never empty
+      if (document.getElementById('creator-filter')) document.getElementById('creator-filter').value = 'all';
+      if (document.getElementById('type-filter')) document.getElementById('type-filter').value = 'all';
+      if (document.getElementById('status-filter')) document.getElementById('status-filter').value = 'all';
+      if (document.getElementById('platform-filter')) document.getElementById('platform-filter').value = 'all';
+
+      const searchInput = document.getElementById('search-input');
+      if (searchInput && searchInput.value) {
+        searchInput.value = '';
+        const clearBtn = document.getElementById('clear-search-btn');
+        if (clearBtn) clearBtn.classList.add('hidden');
+      }
+
+      const select = document.getElementById('style-filter');
+      if (select) select.value = styleName === 'all' ? 'all' : styleName;
+
+      const enLabel = getStyleLabelEN(styleName);
+      document.querySelectorAll('.style-pill').forEach(btn => {
+        if ((styleName === 'all' && btn.innerText.includes('All Styles')) || 
+            (styleName !== 'all' && (btn.innerText.includes(enLabel) || btn.innerText.includes(styleName)))) {
+          btn.className = 'style-pill active px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-red text-white shadow-lg shadow-brand-red/30 transition-all flex items-center gap-1.5';
+        } else {
+          btn.className = 'style-pill px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 hover:border-brand-red transition-all flex items-center gap-1.5';
+        }
+      });
+
+      applyGridFilters();
+
+      const gridCards = document.getElementById('grid-cards-container');
+      if (gridCards) {
+        gridCards.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
 
     // Stats and Progress Counter
@@ -1306,13 +1412,21 @@
     }
 
     function applyGridFilters() {
-      const type = document.getElementById('type-filter').value;
-      const platform = document.getElementById('platform-filter').value;
-      const style = document.getElementById('style-filter').value;
-      const status = document.getElementById('status-filter').value;
-      const creator = document.getElementById('creator-filter') ? document.getElementById('creator-filter').value : 'all';
-      const sort = document.getElementById('sort-filter') ? document.getElementById('sort-filter').value : 'recent';
-      const query = document.getElementById('search-input').value.toLowerCase().trim();
+      const typeEl = document.getElementById('type-filter');
+      const platformEl = document.getElementById('platform-filter');
+      const styleEl = document.getElementById('style-filter');
+      const statusEl = document.getElementById('status-filter');
+      const creatorEl = document.getElementById('creator-filter');
+      const sortEl = document.getElementById('sort-filter');
+      const searchEl = document.getElementById('search-input');
+
+      const type = typeEl ? typeEl.value : 'all';
+      const platform = platformEl ? platformEl.value : 'all';
+      const style = styleEl ? styleEl.value : 'all';
+      const status = statusEl ? statusEl.value : 'all';
+      const creator = creatorEl ? creatorEl.value : 'all';
+      const sort = sortEl ? sortEl.value : 'recent';
+      const query = searchEl ? searchEl.value.toLowerCase().trim() : '';
 
       let filtered = allData.filter(item => {
         // Type (Tutorial vs Exemplo)
@@ -1434,11 +1548,7 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function filterByStyle(styleName) {
-      setView('grid');
-      document.getElementById('style-filter').value = styleName === 'all' ? 'all' : styleName;
-      applyGridFilters();
-    }
+
 
     function filterByPlatform(plat) {
       setView('grid');
@@ -1522,11 +1632,22 @@
             ${isFile ? `
               <div class="absolute bottom-3 right-3 z-20 flex items-center gap-2">
                 <a href="${ytWatchUrl}" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl bg-brand-red hover:bg-rose-600 text-white text-xs font-bold flex items-center gap-1.5 shadow-xl transition-all">
-                  <span>Abrir no YouTube (Evitar Erro 153)</span>
+                  <span>Open on YouTube</span>
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
               </div>
             ` : ''}
+          </div>
+        `;
+      } else if (item.url && (item.url.includes('.mp4') || item.url.includes('prompt-motion.com'))) {
+        fallbackBox.classList.add('hidden');
+        playerBox.classList.remove('hidden');
+        playerBox.innerHTML = `
+          <div class="relative w-full h-full bg-black flex items-center justify-center">
+            <video controls autoplay loop playsinline class="w-full h-full object-contain">
+              <source src="${item.url}" type="video/mp4">
+              Your browser does not support HTML5 MP4 video.
+            </video>
           </div>
         `;
       } else {
@@ -1727,17 +1848,17 @@
             📷
           </div>
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/20 border border-pink-500/30 text-pink-300 text-xs font-bold uppercase tracking-wider mb-2">
-            <span>Instagram Reel Oficial</span>
+            <span>Instagram Reel</span>
             <span>•</span>
             <span>${item.creator}</span>
           </div>
           <h4 class="text-base sm:text-lg font-bold text-white mb-2 max-w-lg leading-snug">${item.title}</h4>
           <p class="text-xs text-slate-300 mb-5 max-w-md leading-relaxed">
-            O Instagram restringe a reprodução direta de Reels dentro de iframes externos por políticas de privacidade e áudio. Assista com som original e taxa de quadros nativa diretamente na plataforma oficial.
+            Meta DRM policies restrict embedded iframe playback. Watch this Reel directly on Instagram with full audio and maximum frame rate.
           </p>
           ${item.url ? `
             <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 hover:from-purple-500 hover:to-orange-400 text-white font-bold text-xs sm:text-sm flex items-center gap-2 shadow-xl shadow-pink-600/30 transition-all transform hover:-translate-y-0.5">
-              <span>▶ Assistir Reel no Instagram</span>
+              <span>▶ Watch Reel on Instagram</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
             </a>
           ` : ''}
@@ -1755,11 +1876,11 @@
           </div>
           <h4 class="text-base sm:text-lg font-bold text-white mb-2 max-w-lg leading-snug">${item.title}</h4>
           <p class="text-xs text-slate-300 mb-5 max-w-md leading-relaxed">
-            Pasta curada de loops, motion graphics e inspirações estéticas no Pinterest.
+            Curated motion design inspiration pin and loop board on Pinterest.
           </p>
           ${item.url ? `
             <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs sm:text-sm flex items-center gap-2 shadow-xl shadow-red-600/30 transition-all transform hover:-translate-y-0.5">
-              <span>Abrir Pasta no Pinterest</span>
+              <span>Open Board on Pinterest</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
             </a>
           ` : ''}
@@ -1771,17 +1892,17 @@
             📦
           </div>
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-2">
-            <span>Template Editável de After Effects</span>
+            <span>After Effects Project Template</span>
             <span>•</span>
             <span>${item.creator}</span>
           </div>
           <h4 class="text-base sm:text-lg font-bold text-white mb-2 max-w-lg leading-snug">${item.title}</h4>
           <p class="text-xs text-slate-300 mb-5 max-w-md leading-relaxed">
-            Projeto aberto com estrutura de camadas, precomposição e expressões prontas para download ou adaptação.
+            Open project structure with pre-comps, keyframe curves and customizable expressions.
           </p>
           ${item.url ? `
             <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm flex items-center gap-2 shadow-xl shadow-emerald-600/30 transition-all transform hover:-translate-y-0.5">
-              <span>Baixar / Acessar Template</span>
+              <span>Download / Access Template</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
             </a>
           ` : ''}
@@ -1796,10 +1917,10 @@
             <span>${item.creator}</span>
           </div>
           <h4 class="text-base sm:text-lg font-bold text-white mb-2 max-w-md">${item.title}</h4>
-          <p class="text-xs text-slate-400 mb-4 max-w-sm">Esta referência é uma publicação ou recurso de plataforma externa.</p>
+          <p class="text-xs text-slate-400 mb-4 max-w-sm">External motion reference asset.</p>
           ${item.url ? `
             <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-brand-red hover:bg-rose-600 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-brand-red/30 transition-all">
-              <span>Acessar Referência Externa</span>
+              <span>Open External Reference</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
             </a>
           ` : ''}

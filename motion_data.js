@@ -1343,10 +1343,10 @@ window.MOTION_DATA = [
     "title": "Glass escuro com luz de borda estilo Gemini",
     "url": "https://br.pinterest.com/search/pins/?q=gemini%20ai%20glow%20ui",
     "has_link": true,
-    "platform": "Site",
+    "platform": "Pinterest",
     "date": "22/10/2026",
-    "aspect": "",
-    "duration": "",
+    "aspect": "9:16",
+    "duration": "Loop",
     "styles": [
       "Interface de produto",
       "Minimalista",
