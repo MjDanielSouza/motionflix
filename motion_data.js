@@ -2588,5 +2588,138 @@ window.MOTION_DATA = [
     "youtube_id": "kY8E0R4W7-M",
     "is_bonus": true,
     "id": 120
+  },
+  {
+    "id": 121,
+    "original_id": 138,
+    "creator": "Pinterest Curadoria",
+    "title": "Spatial Computing & VisionOS: Telas Flutuantes em Vidro Profundo",
+    "url": "https://br.pinterest.com/search/pins/?q=visionos%20spatial%20ui%20motion%20design",
+    "has_link": true,
+    "platform": "Pinterest",
+    "date": "11/11/2026",
+    "aspect": "16:9",
+    "duration": "Board de Referências",
+    "type": "Exemplo",
+    "styles": [
+      "Interface de produto",
+      "Apple claro",
+      "Minimalista",
+      "3D"
+    ],
+    "techniques": "camadas de vidro acrílico com aberração cromática nas bordas, oclusão dinâmica no espaço Z, sombras projetadas em planos reais e cursor ocular com micro-pulso elástico.",
+    "description": "Pranchas e loops de interfaces espaciais inspiradas no visionOS da Apple. Estudo essencial de refração em vidros grossos, iluminação ambiente reativa e ergonomia de movimento tridimensional.",
+    "youtube_id": null,
+    "is_bonus": true
+  },
+  {
+    "id": 122,
+    "original_id": 139,
+    "creator": "Pinterest Curadoria",
+    "title": "Kinetic Typography Loops & Pôsteres Tipográficos Brutalistas",
+    "url": "https://br.pinterest.com/search/pins/?q=kinetic%20typography%20poster%20motion%20loop",
+    "has_link": true,
+    "platform": "Pinterest",
+    "date": "11/11/2026",
+    "aspect": "9:16",
+    "duration": "Board de Referências",
+    "type": "Exemplo",
+    "styles": [
+      "Tipografia cinética",
+      "Minimalista",
+      "Colagem"
+    ],
+    "techniques": "deformação de caracteres por mapa de deslocamento (Displacement Map), cortes sincopados em 12fps, tracking elástico com overshoot de 2 frames e contraste extremo monocromático com vermelho suíço.",
+    "description": "Seleção de pôsteres em movimento com tipografia pesada, animação em grid quebrado e loops hipnóticos. Ideal para inspirar vinhetas de branding, capas de singles e campanhas de moda streetwear.",
+    "youtube_id": null,
+    "is_bonus": true
+  },
+  {
+    "id": 123,
+    "original_id": 140,
+    "creator": "Pinterest Curadoria",
+    "title": "Microinterações SaaS & Gráficos Interativos em Parallax",
+    "url": "https://br.pinterest.com/search/pins/?q=saas%20dashboard%20ui%20animation%20motion%20design",
+    "has_link": true,
+    "platform": "Pinterest",
+    "date": "11/11/2026",
+    "aspect": "16:9",
+    "duration": "Board de Referências",
+    "type": "Exemplo",
+    "styles": [
+      "SaaS",
+      "Interface de produto",
+      "Apple claro"
+    ],
+    "techniques": "stagger escalonado de 2 frames em listas de dados, morphing de gráficos vetoriais de linha para barra, expansão de pílulas flutuantes para modais com easing 85/15 e cursor simulando navegação fluida.",
+    "description": "Coleção de dashboards analíticos B2B, landing pages interativas e demonstrações de produtos de software. Referência direta para animações corporativas limpas e modernas.",
+    "youtube_id": null,
+    "is_bonus": true
+  },
+  {
+    "id": 124,
+    "original_id": 141,
+    "creator": "Pinterest Curadoria",
+    "title": "Simulação 3D Abstrata: Tecidos Iridiscentes & Cromo Líquido",
+    "url": "https://br.pinterest.com/search/pins/?q=3d%20abstract%20cloth%20simulation%20octane%20motion",
+    "has_link": true,
+    "platform": "Pinterest",
+    "date": "11/11/2026",
+    "aspect": "9:16",
+    "duration": "Board de Referências",
+    "type": "Exemplo",
+    "styles": [
+      "3D",
+      "Escuro com neon",
+      "Cinematográfico"
+    ],
+    "techniques": "simulação de dinâmica de tecidos pesados (Cloth Engine), shaders de cromo com dispersão especular, luz volumétrica direcional contra fundo escuro e câmeras lentas de 60fps desaceleradas.",
+    "description": "Estudo estético de simulações procedurais em 3D (Blender / Cinema 4D / Octane). Texturas orgânicas, reflexos metálicos e física de fluidos para intros luxuosas e aberturas cinematográficas.",
+    "youtube_id": null,
+    "is_bonus": true
+  },
+  {
+    "id": 125,
+    "original_id": 142,
+    "creator": "Pinterest Curadoria",
+    "title": "Identidade Visual Dinâmica & Morfismo de Logos em Vetor",
+    "url": "https://br.pinterest.com/search/pins/?q=logo%20animation%20motion%20branding%20identity",
+    "has_link": true,
+    "platform": "Pinterest",
+    "date": "11/11/2026",
+    "aspect": "1:1",
+    "duration": "Board de Referências",
+    "type": "Exemplo",
+    "styles": [
+      "Minimalista",
+      "Tipografia cinética",
+      "Anúncio"
+    ],
+    "techniques": "morfismo contínuo de caminhos vetoriais fechados (Path Morphing), conservação de massa em formas geométricas, aceleração exponencial na saída e snap mecânico de precisão no enquadramento final.",
+    "description": "Guia de referências para animações de marcas e sistemas visuais flexíveis. Mostra como logotipos se comportam em movimento contínuo sem perder a pregnância da forma.",
+    "youtube_id": null,
+    "is_bonus": true
+  },
+  {
+    "id": 126,
+    "original_id": 143,
+    "creator": "Pinterest Curadoria",
+    "title": "Estética de IA Generativa & Storyboards Cyberpunk para Vídeo",
+    "url": "https://br.pinterest.com/search/pins/?q=ai%20generated%20video%20motion%20concept%20cyberpunk",
+    "has_link": true,
+    "platform": "Pinterest",
+    "date": "11/11/2026",
+    "aspect": "16:9",
+    "duration": "Board de Referências",
+    "type": "Exemplo",
+    "styles": [
+      "Escuro com neon",
+      "Cinematográfico",
+      "3D"
+    ],
+    "techniques": "composição de conceitos visuais para Runway Gen-3 e Kling, transições por dilatação de lente (Lens Warp), iluminação de néon em neblina densa e granulação de filme 35mm para quebrar o aspecto digital.",
+    "description": "Pranchas conceituais e estudos de direção de arte para fluxos de IA em motion. Como compor prompts de iluminação e profundidade para obter vídeos cinemáticos sem imperfeições.",
+    "youtube_id": null,
+    "is_bonus": true
   }
 ];
