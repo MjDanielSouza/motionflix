@@ -194,25 +194,6 @@
           </button>
         </div>
 
-        <!-- Add Reference Button (Desktop & Tablet) -->
-        <button onclick="openAddModal()" class="hidden sm:flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-brand-red to-rose-700 hover:from-rose-600 hover:to-brand-red text-white font-semibold text-xs sm:text-sm shadow-lg shadow-brand-red/20 active:scale-95 transition-all shrink-0">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 4v16m8-8H4"></path>
-          </svg>
-          <span>Nova Ref</span>
-        </button>
-
-        <!-- Student Progress Counter -->
-        <div class="hidden xl:flex items-center gap-2 pl-3 border-l border-white/10 text-xs">
-          <div class="flex flex-col text-right">
-            <span class="text-slate-400 font-medium text-[11px]">Estudadas</span>
-            <span id="progress-text" class="text-white font-bold text-sm">0 / 120</span>
-          </div>
-          <div class="w-9 h-9 rounded-full border-2 border-brand-red/40 flex items-center justify-center font-bold text-xs text-white bg-brand-card">
-            <span id="progress-percent">0%</span>
-          </div>
-        </div>
-
       </div>
     </div>
   </header>
@@ -236,16 +217,10 @@
       <span>Salvos</span>
       <span id="mobile-saved-badge" class="absolute top-0 right-2 w-2 h-2 rounded-full bg-brand-red hidden"></span>
     </button>
-    <a href="insights.html" class="flex flex-col items-center gap-0.5 py-1 px-2.5 text-indigo-400 hover:text-white transition-colors">
+    <a href="insights.html" class="flex flex-col items-center gap-0.5 py-1 px-3 text-indigo-400 hover:text-white transition-colors">
       <span class="text-lg leading-5">⚡</span>
       <span>Insights</span>
     </a>
-    <button onclick="openAddModal()" class="flex flex-col items-center gap-0.5 py-1 px-2.5 hover:text-white transition-colors">
-      <div class="w-6 h-6 rounded-full bg-brand-red text-white flex items-center justify-center font-bold text-xs shadow-md shadow-brand-red/30">
-        +
-      </div>
-      <span>Novo</span>
-    </button>
   </nav>
 
   <!-- ==================== HERO BILLBOARD (FEATURED REFERENCE) ==================== -->
