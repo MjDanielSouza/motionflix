@@ -166,6 +166,10 @@
             <span>Minha Lista</span>
             <span id="saved-count-pill" class="text-xs px-1.5 py-0.2 rounded-full bg-brand-red text-white font-bold hidden">0</span>
           </button>
+          <a href="insights.html" class="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-indigo-500/20 to-purple-500/20 text-indigo-300 hover:text-white border border-indigo-500/30 hover:border-indigo-400 transition-all flex items-center gap-1.5 font-semibold">
+            <span>⚡ Radar & Insights IA</span>
+            <span class="text-[9px] px-1.5 py-0.2 rounded-full bg-indigo-500 text-white font-extrabold uppercase">Novo</span>
+          </a>
         </nav>
       </div>
 
@@ -227,12 +231,16 @@
       <svg class="w-5 h-5 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
       <span>Exemplos</span>
     </button>
-    <button onclick="showMyList()" id="mobile-nav-saved" class="flex flex-col items-center gap-0.5 py-1 px-3 hover:text-white transition-colors relative">
+    <button onclick="showMyList()" id="mobile-nav-saved" class="flex flex-col items-center gap-0.5 py-1 px-2.5 hover:text-white transition-colors relative">
       <svg class="w-5 h-5 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/></svg>
       <span>Salvos</span>
       <span id="mobile-saved-badge" class="absolute top-0 right-2 w-2 h-2 rounded-full bg-brand-red hidden"></span>
     </button>
-    <button onclick="openAddModal()" class="flex flex-col items-center gap-0.5 py-1 px-3 hover:text-white transition-colors">
+    <a href="insights.html" class="flex flex-col items-center gap-0.5 py-1 px-2.5 text-indigo-400 hover:text-white transition-colors">
+      <span class="text-lg leading-5">⚡</span>
+      <span>Insights</span>
+    </a>
+    <button onclick="openAddModal()" class="flex flex-col items-center gap-0.5 py-1 px-2.5 hover:text-white transition-colors">
       <div class="w-6 h-6 rounded-full bg-brand-red text-white flex items-center justify-center font-bold text-xs shadow-md shadow-brand-red/30">
         +
       </div>

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>MOTIONFLIX INSIGHTS · Radar Diário de Motion Design & IA</title>
+  <meta name="description" content="Portal diário de matérias, artigos, repositórios open-source e insights práticos sobre Motion Design e Inteligência Artificial.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: '#E50914',
+              hoverRed: '#B20710',
+              dark: '#0B0C10',
+              card: '#14161F',
+              cardHover: '#1B1E2B',
+              border: '#272A38',
+              accent: '#6366F1',
+              neon: '#00F2FE'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0B0C10; }
+    ::-webkit-scrollbar-thumb { background: #272A38; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #6366F1; }
+    
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .line-clamp-3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    * { -webkit-tap-highlight-color: transparent; }
+  </style>
+</head>
+<body class="bg-brand-dark text-slate-100 font-sans min-h-screen antialiased selection:bg-indigo-500 selection:text-white pb-24 md:pb-12">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="sticky top-0 z-40 bg-brand-dark/95 backdrop-blur-md border-b border-white/10 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
+      
+      <!-- Brand & Link to Main App -->
+      <div class="flex items-center gap-3 sm:gap-6">
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-gradient-to-tr from-brand-red to-rose-600 flex items-center justify-center font-black text-lg sm:text-xl text-white shadow-lg shadow-brand-red/30 tracking-tighter group-hover:scale-105 transition-transform">
+            M
+          </div>
+          <div class="flex flex-col">
+            <span class="font-display font-extrabold text-lg sm:text-xl tracking-wider text-white flex items-center gap-1.5">
+              MOTION<span class="text-brand-red">FLIX</span>
+              <span class="text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">INSIGHTS</span>
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Back Link -->
+        <a href="index.html" class="hidden sm:inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-white px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 transition-colors">
+          <span>🎬</span>
+          <span>Voltar ao Catálogo de Vídeos</span>
+        </a>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button onclick="openNewInsightModal()" class="inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold text-xs sm:text-sm shadow-lg shadow-indigo-600/20 transition-all transform hover:-translate-y-0.5">
+          <span>➕</span>
+          <span class="hidden xs:inline">Novo Insight / Matéria</span>
+          <span class="xs:hidden">Novo</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== SUB-HEADER / BANNER ==================== -->
+  <section class="relative overflow-hidden border-b border-white/5 bg-gradient-to-b from-indigo-950/20 via-brand-dark to-brand-dark py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold mb-3">
+            <span>⚡</span>
+            <span>Radar Diário de Tecnologia & Design</span>
+          </div>
+          <h1 class="font-display font-black text-2xl sm:text-4xl lg:text-5xl tracking-tight text-white">
+            Matérias, Repositórios & <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Insights de IA</span>
+          </h1>
+          <p class="mt-2 text-sm sm:text-base text-slate-400 max-w-2xl leading-relaxed">
+            Pílulas editoriais e análises técnicas sobre o que está moldando o futuro do Motion Design: novidades em IA, repositórios de animação em código e workflows de alto impacto.
+          </p>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="flex items-center gap-3 shrink-0">
+          <div class="bg-brand-card/90 border border-brand-border px-4 py-2.5 rounded-xl">
+            <span class="block text-xl font-extrabold text-white font-display" id="total-articles-count">6</span>
+            <span class="text-[11px] text-slate-400 uppercase tracking-wider font-medium">Artigos Publicados</span>
+          </div>
+          <div class="bg-brand-card/90 border border-brand-border px-4 py-2.5 rounded-xl">
+            <span class="block text-xl font-extrabold text-indigo-400 font-display">Daily</span>
+            <span class="text-[11px] text-slate-400 uppercase tracking-wider font-medium">Frequência Radar</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters & Search Bar -->
+      <div class="mt-8 flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between">
+        
+        <!-- Category Pills -->
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-none" id="category-pills">
+          <button onclick="filterCategory('all')" data-cat="all" class="cat-pill active px-3.5 py-1.5 rounded-full text-xs font-bold transition-all bg-indigo-600 text-white whitespace-nowrap">
+            Todas
+          </button>
+          <button onclick="filterCategory('Inteligência Artificial')" data-cat="Inteligência Artificial" class="cat-pill px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all bg-white/5 hover:bg-white/10 text-slate-300 whitespace-nowrap">
+            🤖 Inteligência Artificial
+          </button>
+          <button onclick="filterCategory('Repositórios Open Source')" data-cat="Repositórios Open Source" class="cat-pill px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all bg-white/5 hover:bg-white/10 text-slate-300 whitespace-nowrap">
+            📦 Repositórios Open Source
+          </button>
+          <button onclick="filterCategory('Workflows & Ferramentas')" data-cat="Workflows & Ferramentas" class="cat-pill px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all bg-white/5 hover:bg-white/10 text-slate-300 whitespace-nowrap">
+            🛠️ Workflows & Ferramentas
+          </button>
+          <button onclick="filterCategory('Mercado & Tendências')" data-cat="Mercado & Tendências" class="cat-pill px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all bg-white/5 hover:bg-white/10 text-slate-300 whitespace-nowrap">
+            💡 Mercado & Tendências
+          </button>
+        </div>
+
+        <!-- Search Input -->
+        <div class="relative w-full md:w-72 shrink-0">
+          <span class="absolute inset-y-0 left-3 flex items-center text-slate-400 text-xs">🔍</span>
+          <input 
+            type="text" 
+            id="search-input" 
+            oninput="handleSearch(this.value)"
+            placeholder="Buscar matéria, tag ou ferramenta..." 
+            class="w-full pl-8 pr-4 py-2 bg-brand-card/90 border border-brand-border rounded-xl text-xs sm:text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    
+    <!-- FEATURED STORY (HERO) -->
+    <div id="featured-story-container" class="mb-12">
+      <!-- Injected by JavaScript -->
+    </div>
+
+    <!-- ARTICLES GRID -->
+    <div>
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-xl sm:text-2xl font-bold font-display text-white flex items-center gap-2">
+          <span>Últimas Matérias & Insights</span>
+          <span id="results-count" class="text-xs px-2 py-0.5 rounded bg-white/10 text-slate-300 font-sans font-semibold">6</span>
+        </h2>
+      </div>
+
+      <div id="insights-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="empty-state" class="hidden text-center py-16 bg-brand-card/40 rounded-2xl border border-brand-border">
+        <span class="text-4xl block mb-2">🔍</span>
+        <h3 class="text-lg font-bold text-white">Nenhuma matéria encontrada</h3>
+        <p class="text-sm text-slate-400 mt-1 max-w-md mx-auto">Tente buscar por outro termo ou selecione outra categoria.</p>
+        <button onclick="filterCategory('all'); document.getElementById('search-input').value='';" class="mt-4 px-4 py-2 rounded-xl bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-500 transition-colors">
+          Ver todas as matérias
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== READING MODAL ==================== -->
+  <div id="reading-modal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/80 backdrop-blur-md p-3 sm:p-6 md:p-8 flex items-center justify-center animate-fadeIn">
+    <div class="relative w-full max-w-4xl bg-brand-card border border-brand-border rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden my-auto">
+      
+      <!-- Modal Close Button -->
+      <button onclick="closeReadingModal()" class="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/70 hover:bg-black text-white flex items-center justify-center transition-transform hover:scale-110">
+        ✕
+      </button>
+
+      <!-- Modal Header Cover -->
+      <div class="relative h-56 sm:h-80 w-full overflow-hidden">
+        <img id="modal-cover" src="" alt="Capa" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-brand-card/60 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-8 sm:right-8">
+          <div class="flex items-center gap-2 mb-2">
+            <span id="modal-category" class="px-2.5 py-1 rounded-full text-[11px] font-bold text-white bg-indigo-600">Categoria</span>
+            <span id="modal-read-time" class="text-xs text-slate-300 font-medium">4 min de leitura</span>
+            <span class="text-slate-500">•</span>
+            <span id="modal-date" class="text-xs text-slate-400">Data</span>
+          </div>
+          <h1 id="modal-title" class="text-xl sm:text-3xl font-extrabold font-display text-white tracking-tight leading-snug">
+            Título da Matéria
+          </h1>
+        </div>
+      </div>
+
+      <!-- Modal Content Body -->
+      <div class="p-5 sm:p-8 md:p-10">
+        
+        <!-- Key Takeaways Box -->
+        <div class="p-5 rounded-2xl bg-indigo-950/30 border border-indigo-500/20 mb-8">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-indigo-400 flex items-center gap-1.5 mb-3">
+            <span>💡</span> Principais Insights & Conclusões:
+          </h4>
+          <ul id="modal-takeaways" class="space-y-2 text-sm text-slate-300">
+            <!-- Injected via JS -->
+          </ul>
+        </div>
+
+        <!-- Main Article HTML -->
+        <div id="modal-html-content" class="prose prose-invert max-w-none text-slate-300 text-sm sm:text-base leading-relaxed">
+          <!-- Injected via JS -->
+        </div>
+
+        <!-- External Links & Repositories -->
+        <div id="modal-links-section" class="mt-8 pt-6 border-t border-white/10">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-1.5">
+            <span>🔗</span> Links de Referência & Repositórios Oficiais:
+          </h4>
+          <div id="modal-links" class="flex flex-wrap gap-2">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="mt-8 pt-4 flex flex-wrap gap-1.5" id="modal-tags">
+          <!-- Injected via JS -->
+        </div>
+
+        <!-- Modal Footer Actions -->
+        <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+          <button onclick="closeReadingModal()" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition-colors">
+            ← Voltar para o Radar
+          </button>
+          <a href="index.html" class="inline-flex items-center gap-1.5 text-xs text-indigo-400 hover:text-indigo-300 font-semibold">
+            Ir para Tutoriais em Vídeo →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== NEW INSIGHT CREATION MODAL ==================== -->
+  <div id="new-modal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/85 backdrop-blur-md p-3 sm:p-6 flex items-center justify-center">
+    <div class="relative w-full max-w-2xl bg-brand-card border border-brand-border rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl my-auto">
+      
+      <button onclick="closeNewInsightModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20">✕</button>
+
+      <div class="flex items-center gap-2 mb-1">
+        <span class="text-xl">✍️</span>
+        <h3 class="text-xl font-bold font-display text-white">Publicar Novo Insight / Matéria</h3>
+      </div>
+      <p class="text-xs text-slate-400 mb-6">Cadastre artigos, tutoriais de código ou descobertas diárias sobre Motion e IA.</p>
+
+      <form id="new-insight-form" onsubmit="handleCreateInsight(event)" class="space-y-4 text-xs sm:text-sm">
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">Título da Matéria *</label>
+          <input type="text" id="form-title" required placeholder="Ex.: Lottie no iOS 18: Como criar micro-interações fluidas" class="w-full px-3.5 py-2.5 bg-black/40 border border-brand-border rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">Categoria *</label>
+            <select id="form-category" required class="w-full px-3.5 py-2.5 bg-brand-card border border-brand-border rounded-xl text-white focus:outline-none focus:border-indigo-500">
+              <option value="Inteligência Artificial">🤖 Inteligência Artificial</option>
+              <option value="Repositórios Open Source">📦 Repositórios Open Source</option>
+              <option value="Workflows & Ferramentas">🛠️ Workflows & Ferramentas</option>
+              <option value="Mercado & Tendências">💡 Mercado & Tendências</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">Tempo de Leitura</label>
+            <input type="text" id="form-readtime" placeholder="Ex.: 3 min de leitura" value="3 min de leitura" class="w-full px-3.5 py-2.5 bg-black/40 border border-brand-border rounded-xl text-white focus:outline-none focus:border-indigo-500">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">Resumo Rápido (Lide) *</label>
+          <textarea id="form-summary" required rows="2" placeholder="Breve resumo da matéria em 1 a 2 frases para o card." class="w-full px-3.5 py-2.5 bg-black/40 border border-brand-border rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">Pontos Chave / Takeaways (um por linha)</label>
+          <textarea id="form-takeaways" rows="3" placeholder="- Primeiro grande insight&#10;- Segundo insight&#10;- Dica prática de produção" class="w-full px-3.5 py-2.5 bg-black/40 border border-brand-border rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">Conteúdo Completo da Matéria</label>
+          <textarea id="form-content" rows="4" placeholder="Escreva o texto completo do artigo ou insight..." class="w-full px-3.5 py-2.5 bg-black/40 border border-brand-border rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"></textarea>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">Link de Referência / Repositório</label>
+            <input type="url" id="form-link" placeholder="https://github.com/usuario/repo" class="w-full px-3.5 py-2.5 bg-black/40 border border-brand-border rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500">
+          </div>
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">Tags (separadas por vírgula)</label>
+            <input type="text" id="form-tags" placeholder="Ex.: IA, After Effects, Lottie, UI" class="w-full px-3.5 py-2.5 bg-black/40 border border-brand-border rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500">
+          </div>
+        </div>
+
+        <div class="pt-4 flex items-center justify-end gap-3">
+          <button type="button" onclick="closeNewInsightModal()" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold">Cancelar</button>
+          <button type="submit" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold shadow-lg shadow-indigo-600/30">Publicar Matéria</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== MOBILE BOTTOM NAVBAR ==================== -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-brand-dark/95 backdrop-blur-lg border-t border-white/10 px-6 py-2.5 flex items-center justify-around">
+    <a href="index.html" class="flex flex-col items-center gap-1 text-slate-400 hover:text-white">
+      <span class="text-lg">🎬</span>
+      <span class="text-[10px] font-semibold">Aulas & Vídeos</span>
+    </a>
+    <a href="insights.html" class="flex flex-col items-center gap-1 text-indigo-400">
+      <span class="text-lg">⚡</span>
+      <span class="text-[10px] font-bold">Insights IA</span>
+    </a>
+    <button onclick="openNewInsightModal()" class="flex flex-col items-center gap-1 text-slate-400 hover:text-white">
+      <span class="text-lg">➕</span>
+      <span class="text-[10px] font-semibold">Publicar</span>
+    </button>
+  </div>
+
+  <!-- SCRIPT -->
+  <script src="insights_data.js"></script>
+  <script>
+    let allInsights = [];
+    let currentCategory = 'all';
+    let searchQuery = '';
+
+    // Init
+    document.addEventListener('DOMContentLoaded', () => {
+      loadInsights();
+      renderAll();
+    });
+
+    function loadInsights() {
+      const stored = localStorage.getItem('motionflix_custom_insights');
+      const customList = stored ? JSON.parse(stored) : [];
+      allInsights = [...customList, ...DEFAULT_INSIGHTS];
+      document.getElementById('total-articles-count').innerText = allInsights.length;
+    }
+
+    function renderAll() {
+      const filtered = allInsights.filter(item => {
+        const matchesCategory = currentCategory === 'all' || item.category === currentCategory;
+        const matchesSearch = !searchQuery || 
+          item.title.toLowerCase().includes(searchQuery) ||
+          item.summary.toLowerCase().includes(searchQuery) ||
+          (item.tags && item.tags.some(t => t.toLowerCase().includes(searchQuery)));
+        return matchesCategory && matchesSearch;
+      });
+
+      renderFeatured(filtered[0]);
+      renderGrid(filtered);
+      document.getElementById('results-count').innerText = filtered.length;
+      
+      const emptyEl = document.getElementById('empty-state');
+      if (filtered.length === 0) {
+        emptyEl.classList.remove('hidden');
+      } else {
+        emptyEl.classList.add('hidden');
+      }
+    }
+
+    function renderFeatured(featured) {
+      const container = document.getElementById('featured-story-container');
+      if (!featured || searchQuery) {
+        container.innerHTML = '';
+        return;
+      }
+
+      container.innerHTML = `
+        <div class="relative rounded-3xl overflow-hidden border border-brand-border bg-gradient-to-r from-brand-card via-slate-900 to-indigo-950/40 p-6 sm:p-10 lg:p-12 shadow-2xl flex flex-col lg:flex-row items-center gap-8 group">
+          <div class="w-full lg:w-1/2 flex flex-col justify-center">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r ${featured.badgeColor || 'from-indigo-600 to-purple-600'}">
+                ⭐ Destaque do Dia · ${featured.category}
+              </span>
+              <span class="text-xs text-slate-400">${featured.readTime}</span>
+            </div>
+            <h2 class="text-2xl sm:text-4xl font-extrabold font-display text-white tracking-tight leading-snug group-hover:text-indigo-300 transition-colors">
+              ${featured.title}
+            </h2>
+            <p class="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed line-clamp-3">
+              ${featured.summary}
+            </p>
+
+            <div class="mt-6 flex flex-wrap items-center gap-3">
+              <button onclick="openReadingModal('${featured.id}')" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm shadow-lg shadow-indigo-600/30 transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                <span>Ler Matéria Completa</span>
+                <span>→</span>
+              </button>
+              <span class="text-xs text-slate-400 font-medium">Por ${featured.author} • ${featured.date}</span>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-1/2 h-56 sm:h-80 rounded-2xl overflow-hidden border border-white/10 shrink-0">
+            <img src="${featured.coverImage}" alt="${featured.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          </div>
+        </div>
+      `;
+    }
+
+    function renderGrid(items) {
+      const grid = document.getElementById('insights-grid');
+      grid.innerHTML = items.map((item, idx) => `
+        <article class="bg-brand-card border border-brand-border hover:border-indigo-500/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-500/10 transition-all flex flex-col group transform hover:-translate-y-1">
+          <div class="relative h-48 w-full overflow-hidden bg-slate-900">
+            <img src="${item.coverImage}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-bold text-white bg-black/70 backdrop-blur-md border border-white/10">
+              ${item.category}
+            </span>
+            <span class="absolute bottom-3 right-3 text-[11px] text-slate-300 font-medium bg-black/60 px-2 py-0.5 rounded backdrop-blur-sm">
+              ${item.readTime}
+            </span>
+          </div>
+
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="text-[11px] text-slate-400 mb-1.5 font-medium">${item.date} • ${item.author}</div>
+              <h3 class="text-base sm:text-lg font-bold font-display text-white group-hover:text-indigo-300 transition-colors leading-snug line-clamp-2">
+                ${item.title}
+              </h3>
+              <p class="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-3">
+                ${item.summary}
+              </p>
+
+              <!-- Takeaways pills preview -->
+              ${item.keyTakeaways && item.keyTakeaways.length > 0 ? `
+                <div class="mt-4 pt-3 border-t border-white/5 space-y-1.5">
+                  <div class="text-[10px] font-bold uppercase tracking-wider text-indigo-400">Pílula de Insight:</div>
+                  <div class="text-xs text-slate-300 flex items-start gap-1.5">
+                    <span class="text-indigo-400 shrink-0">▸</span>
+                    <span class="line-clamp-2">${item.keyTakeaways[0]}</span>
+                  </div>
+                </div>
+              ` : ''}
+            </div>
+
+            <div class="mt-6 pt-3 border-t border-white/10 flex items-center justify-between">
+              <div class="flex flex-wrap gap-1">
+                ${(item.tags || []).slice(0, 2).map(t => `<span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-slate-400 font-medium">${t}</span>`).join('')}
+              </div>
+              <button onclick="openReadingModal('${item.id}')" class="text-xs text-indigo-400 hover:text-indigo-300 font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <span>Ler</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function filterCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-pill').forEach(btn => {
+        if (btn.getAttribute('data-cat') === cat) {
+          btn.className = "cat-pill active px-3.5 py-1.5 rounded-full text-xs font-bold transition-all bg-indigo-600 text-white whitespace-nowrap";
+        } else {
+          btn.className = "cat-pill px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all bg-white/5 hover:bg-white/10 text-slate-300 whitespace-nowrap";
+        }
+      });
+      renderAll();
+    }
+
+    function handleSearch(val) {
+      searchQuery = val.trim().toLowerCase();
+      renderAll();
+    }
+
+    function openReadingModal(id) {
+      const item = allInsights.find(i => i.id === id);
+      if (!item) return;
+
+      document.getElementById('modal-cover').src = item.coverImage;
+      document.getElementById('modal-category').innerText = item.category;
+      document.getElementById('modal-read-time').innerText = item.readTime;
+      document.getElementById('modal-date').innerText = `${item.date} • Por ${item.author}`;
+      document.getElementById('modal-title').innerText = item.title;
+
+      const takeawaysEl = document.getElementById('modal-takeaways');
+      takeawaysEl.innerHTML = (item.keyTakeaways || []).map(t => `
+        <li class="flex items-start gap-2">
+          <span class="text-indigo-400 font-bold shrink-0">✓</span>
+          <span>${t}</span>
+        </li>
+      `).join('');
+
+      document.getElementById('modal-html-content').innerHTML = item.contentHtml || `<p>${item.summary}</p>`;
+
+      const linksSection = document.getElementById('modal-links-section');
+      const linksEl = document.getElementById('modal-links');
+      if (item.relatedLinks && item.relatedLinks.length > 0) {
+        linksSection.classList.remove('hidden');
+        linksEl.innerHTML = item.relatedLinks.map(l => `
+          <a href="${l.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600/20 hover:bg-indigo-600 text-indigo-300 hover:text-white border border-indigo-500/30 text-xs font-semibold transition-all">
+            <span>🔗</span>
+            <span>${l.title}</span>
+            <span class="text-[10px] opacity-70">↗</span>
+          </a>
+        `).join('');
+      } else {
+        linksSection.classList.add('hidden');
+      }
+
+      const tagsEl = document.getElementById('modal-tags');
+      tagsEl.innerHTML = (item.tags || []).map(t => `
+        <span class="px-2.5 py-1 rounded-full text-xs bg-white/5 text-slate-400 border border-white/5 font-medium">#${t}</span>
+      `).join('');
+
+      document.getElementById('reading-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeReadingModal() {
+      document.getElementById('reading-modal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function openNewInsightModal() {
+      document.getElementById('new-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeNewInsightModal() {
+      document.getElementById('new-modal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function handleCreateInsight(e) {
+      e.preventDefault();
+      const title = document.getElementById('form-title').value;
+      const category = document.getElementById('form-category').value;
+      const readTime = document.getElementById('form-readtime').value || '3 min de leitura';
+      const summary = document.getElementById('form-summary').value;
+      const takeawaysRaw = document.getElementById('form-takeaways').value;
+      const content = document.getElementById('form-content').value;
+      const link = document.getElementById('form-link').value;
+      const tagsRaw = document.getElementById('form-tags').value;
+
+      const takeaways = takeawaysRaw.split('\n').map(t => t.replace(/^[-*•]\s*/, '').trim()).filter(Boolean);
+      const tags = tagsRaw.split(',').map(t => t.trim()).filter(Boolean);
+
+      const newArticle = {
+        id: 'custom-' + Date.now(),
+        title,
+        category,
+        readTime,
+        date: new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' }),
+        author: 'Daniel',
+        coverImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80',
+        summary,
+        keyTakeaways: takeaways.length > 0 ? takeaways : [summary],
+        contentHtml: `<p class="text-slate-300 leading-relaxed mb-4">${content.replace(/\n/g, '<br>')}</p>`,
+        relatedLinks: link ? [{ title: "Link de Referência", url: link }] : [],
+        tags: tags.length > 0 ? tags : [category]
+      };
+
+      const stored = localStorage.getItem('motionflix_custom_insights');
+      const customList = stored ? JSON.parse(stored) : [];
+      customList.unshift(newArticle);
+      localStorage.setItem('motionflix_custom_insights', JSON.stringify(customList));
+
+      loadInsights();
+      renderAll();
+      closeNewInsightModal();
+      document.getElementById('new-insight-form').reset();
+      openReadingModal(newArticle.id);
+    }
+  </script>
+</body>
+</html>
