@@ -137,7 +137,7 @@
       
       <!-- Brand & Desktop Nav Links -->
       <div class="flex items-center gap-4 lg:gap-8 min-w-0">
-        <a href="#" class="flex items-center gap-2 group shrink-0">
+        <a href="#" onclick="setView('home'); return false;" class="flex items-center gap-2 group shrink-0">
           <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-gradient-to-tr from-brand-red to-rose-600 flex items-center justify-center font-black text-lg sm:text-xl text-white shadow-lg shadow-brand-red/30 tracking-tighter group-hover:scale-105 transition-transform">
             M
           </div>
@@ -150,24 +150,27 @@
           </div>
         </a>
 
-        <!-- Desktop Navigation Tabs (Standardized & Motion Design English Terms) -->
+        <!-- Desktop Navigation Tabs (Separated Views) -->
         <nav class="hidden lg:flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-300">
-          <a href="insights.html" id="tab-insights" class="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 hover:text-white border border-white/10 transition-all flex items-center gap-1.5">
-            <span>⚡ AI Insights</span>
-            <span class="text-[9px] px-1.5 py-0.5 rounded-full bg-indigo-500/30 text-indigo-300 border border-indigo-500/40 font-bold uppercase">Daily</span>
-          </a>
+          <button onclick="setView('home')" id="tab-home" class="px-3.5 py-1.5 rounded-full bg-brand-red text-white border border-brand-red shadow-lg shadow-brand-red/25 transition-all flex items-center gap-1.5">
+            <span>🏠 Home</span>
+          </button>
           <button onclick="showCreatorsView()" id="tab-creators" class="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 hover:text-white border border-white/10 transition-all flex items-center gap-1.5">
             <span>👥 Creators</span>
-            <span class="text-[9px] px-1.5 py-0.5 rounded-full bg-white/10 text-slate-400 font-bold">50</span>
+            <span class="text-[9px] px-1.5 py-0.5 rounded-full bg-white/10 text-slate-300 font-bold">50</span>
           </button>
           <button onclick="showStylesView()" id="tab-styles" class="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 hover:text-white border border-white/10 transition-all flex items-center gap-1.5">
-            <span>🎨 Visual Styles</span>
-            <span class="text-[9px] px-1.5 py-0.5 rounded-full bg-white/10 text-slate-400 font-bold">17</span>
+            <span>🎨 By Style</span>
+            <span class="text-[9px] px-1.5 py-0.5 rounded-full bg-white/10 text-slate-300 font-bold">17</span>
           </button>
           <button onclick="showCatalogView()" id="tab-grid" class="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 hover:text-white border border-white/10 transition-all flex items-center gap-1.5">
             <span>🎬 Showcase</span>
-            <span id="showcase-nav-count" class="text-[9px] px-1.5 py-0.5 rounded-full bg-white/10 text-slate-400 font-bold">126</span>
+            <span id="showcase-nav-count" class="text-[9px] px-1.5 py-0.5 rounded-full bg-white/10 text-slate-300 font-bold">126</span>
           </button>
+          <a href="insights.html" id="tab-insights" class="px-3.5 py-1.5 rounded-full bg-indigo-500/15 hover:bg-indigo-500/25 text-indigo-200 hover:text-white border border-indigo-500/30 transition-all flex items-center gap-1.5">
+            <span>⚡ AI Insights</span>
+            <span class="text-[9px] px-1.5 py-0.5 rounded-full bg-indigo-500/30 text-indigo-300 border border-indigo-500/40 font-bold uppercase">Daily</span>
+          </a>
         </nav>
       </div>
 
@@ -198,22 +201,26 @@
 
   <!-- ==================== MOBILE BOTTOM NAVBAR (STANDARDIZED) ==================== -->
   <nav class="fixed bottom-0 left-0 right-0 z-40 bg-brand-dark/95 backdrop-blur-xl border-t border-brand-border/80 px-2 py-1.5 flex items-center justify-around md:hidden text-[10px] font-medium text-slate-400 shadow-2xl">
-    <a href="insights.html" class="flex flex-col items-center gap-0.5 py-1 px-3 text-indigo-400 hover:text-white transition-colors">
-      <span class="text-lg leading-5">⚡</span>
-      <span class="font-bold">Insights</span>
-    </a>
-    <button onclick="showCreatorsView()" id="mobile-nav-creators" class="flex flex-col items-center gap-0.5 py-1 px-3 hover:text-white transition-colors">
+    <button onclick="setView('home')" id="mobile-nav-home" class="flex flex-col items-center gap-0.5 py-1 px-2.5 text-brand-red transition-colors">
+      <span class="text-lg leading-5">🏠</span>
+      <span class="font-bold">Home</span>
+    </button>
+    <button onclick="showCreatorsView()" id="mobile-nav-creators" class="flex flex-col items-center gap-0.5 py-1 px-2.5 hover:text-white transition-colors">
       <span class="text-lg leading-5">👥</span>
       <span>Creators</span>
     </button>
-    <button onclick="showStylesView()" id="mobile-nav-styles" class="flex flex-col items-center gap-0.5 py-1 px-3 hover:text-white transition-colors">
+    <button onclick="showStylesView()" id="mobile-nav-styles" class="flex flex-col items-center gap-0.5 py-1 px-2.5 hover:text-white transition-colors">
       <span class="text-lg leading-5">🎨</span>
-      <span>Styles</span>
+      <span>By Style</span>
     </button>
-    <button onclick="showCatalogView()" id="mobile-nav-grid" class="flex flex-col items-center gap-0.5 py-1 px-3 hover:text-white transition-colors">
+    <button onclick="showCatalogView()" id="mobile-nav-grid" class="flex flex-col items-center gap-0.5 py-1 px-2.5 hover:text-white transition-colors">
       <span class="text-lg leading-5">🎬</span>
       <span>Showcase</span>
     </button>
+    <a href="insights.html" class="flex flex-col items-center gap-0.5 py-1 px-2.5 text-indigo-400 hover:text-white transition-colors">
+      <span class="text-lg leading-5">⚡</span>
+      <span class="font-bold">Insights</span>
+    </a>
   </nav>
 
   <!-- ==================== HERO BILLBOARD (FEATURED REFERENCE) ==================== -->
@@ -472,48 +479,143 @@
 
     </div>
 
-    <!-- GRID VIEW: ALL REFERENCES CATALOG -->
-    <div id="grid-view" class="hidden space-y-6 pt-4 sm:pt-6">
+    <!-- ==================== CREATORS VIEW: DEDICATED CREATOR PROFILES ==================== -->
+    <div id="creators-view" class="hidden space-y-6 pt-20 sm:pt-24">
       
-      <!-- Filter and View Header (Clean Motion English) -->
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 sm:p-5 rounded-2xl bg-brand-card border border-brand-border">
+      <!-- Creators Page Hero Banner -->
+      <div class="relative rounded-3xl overflow-hidden border border-brand-border bg-gradient-to-r from-brand-card via-slate-900 to-rose-950/30 p-6 sm:p-8 lg:p-10 shadow-2xl">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div class="max-w-2xl space-y-2">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red/15 border border-brand-red/30 text-brand-red text-xs font-bold uppercase tracking-wider">
+              <span>👥</span>
+              <span>Diretório de Criadores & Estúdios</span>
+            </div>
+            <h1 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+              Perfis de Criadores de <span class="text-brand-red">Motion Design</span>
+            </h1>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Conheça quem está por trás das melhores referências do mercado: sua identidade visual, assinatura de curvas no Graph Editor, especialidades técnicas e portfólio individual.
+            </p>
+          </div>
+
+          <!-- Search & Filter Creators -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
+            <div class="relative">
+              <input 
+                type="text" 
+                id="creator-quick-search" 
+                placeholder="Buscar criador, estúdio ou técnica..." 
+                class="bg-brand-dark/90 text-xs sm:text-sm text-white placeholder-slate-400 pl-9 pr-4 py-2.5 rounded-xl border border-brand-border focus:border-brand-red focus:outline-none w-full sm:w-64"
+                oninput="handleCreatorSearch(this.value)"
+              >
+              <span class="absolute left-3 top-2.5 text-slate-400 text-xs">🔍</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Creator Category Filter Pills -->
+        <div class="mt-6 pt-5 border-t border-white/10 flex items-center gap-2 overflow-x-auto no-scrollbar">
+          <span class="text-[11px] uppercase font-bold text-slate-400 whitespace-nowrap mr-1">Filtrar Perfil:</span>
+          <button onclick="filterCreatorCategory('all')" data-ccat="all" class="creator-cat-pill active px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-red text-white shadow-lg shadow-brand-red/30 transition-all whitespace-nowrap">
+            Todos os Criadores (50)
+          </button>
+          <button onclick="filterCreatorCategory('YouTube')" data-ccat="YouTube" class="creator-cat-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all whitespace-nowrap">
+            ▶ Educadores & Canais YouTube
+          </button>
+          <button onclick="filterCreatorCategory('Instagram')" data-ccat="Instagram" class="creator-cat-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all whitespace-nowrap">
+            📷 Criadores Reels & UI Motion
+          </button>
+          <button onclick="filterCreatorCategory('AI')" data-ccat="AI" class="creator-cat-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all whitespace-nowrap">
+            🤖 Estúdios & Labs de IA
+          </button>
+          <button onclick="filterCreatorCategory('Template')" data-ccat="Template" class="creator-cat-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all whitespace-nowrap">
+            📦 Sistemas & Templates AE
+          </button>
+        </div>
+      </div>
+
+      <!-- Full Creator Profile Cards Grid -->
+      <div id="creator-cards-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+
+    <!-- ==================== STYLES VIEW: REFERENCES SEPARATED & SPECIFIED BY STYLE ==================== -->
+    <div id="styles-view" class="hidden space-y-8 pt-20 sm:pt-24">
+      
+      <!-- Styles Page Header & Navigation -->
+      <div class="relative rounded-3xl overflow-hidden border border-brand-border bg-gradient-to-r from-brand-card via-slate-900 to-indigo-950/40 p-6 sm:p-8 lg:p-10 shadow-2xl">
+        <div class="max-w-3xl space-y-2">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-xs font-bold uppercase tracking-wider">
+            <span>🎨</span>
+            <span>Enciclopédia de Estilos Visuais & Direção de Arte</span>
+          </div>
+          <h1 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+            Referências Separadas por <span class="text-indigo-400">Estilo de Motion</span>
+          </h1>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Cada estilo possui sua própria gramática visual, iluminação, curvas de aceleração no Graph Editor e aplicação prática. Selecione um estilo abaixo ou explore todas as seções especificadas.
+          </p>
+        </div>
+
+        <!-- Style Selector Pills -->
+        <div class="mt-6 pt-5 border-t border-white/10">
+          <div class="text-[11px] uppercase font-bold text-slate-400 mb-2.5">Navegar por Estilo Específico:</div>
+          <div id="style-pills-container" class="flex flex-wrap gap-2">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Separated Style Sections Container -->
+      <div id="styles-sections-container" class="space-y-10">
+        <!-- Populated via JS: Each style gets a Specification Header + its dedicated References Grid -->
+      </div>
+    </div>
+
+    <!-- ==================== GRID VIEW: GENERAL SHOWCASE CATALOG ==================== -->
+    <div id="grid-view" class="hidden space-y-6 pt-20 sm:pt-24">
+      
+      <!-- Filter and View Header -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 sm:p-6 rounded-2xl bg-brand-card border border-brand-border">
         <div>
           <h2 id="grid-view-title" class="font-display font-bold text-xl sm:text-2xl text-white flex items-center gap-2">
-            Motion Showcase & References
+            <span>🎬</span>
+            <span>Catálogo Geral · Showcase</span>
             <span id="grid-count-badge" class="text-xs px-2.5 py-0.5 rounded-full bg-brand-red text-white font-bold">126</span>
           </h2>
-          <p id="grid-view-subtitle" class="text-xs text-slate-400 mt-1">Browse motion references by creators, visual styles, and publication dates.</p>
+          <p id="grid-view-subtitle" class="text-xs text-slate-400 mt-1">Explore e filtre todas as aulas e exemplos práticos em uma única grade.</p>
         </div>
 
         <div class="grid grid-cols-1 xs:grid-cols-2 md:flex flex-wrap items-center gap-2 sm:gap-3">
           <!-- Sort Filter -->
           <select id="sort-filter" onchange="applyGridFilters()" class="w-full md:w-auto bg-brand-dark text-xs text-slate-200 border border-brand-border rounded-lg px-3 py-2.5 sm:py-2 focus:outline-none focus:border-brand-red font-semibold">
-            <option value="recent">⏱️ Newest First</option>
-            <option value="featured">⭐ Featured First</option>
-            <option value="title-asc">🔤 Title (A-Z)</option>
-            <option value="title-desc">🔤 Title (Z-A)</option>
+            <option value="recent">⏱️ Mais Recentes</option>
+            <option value="featured">⭐ Destaques Primeiro</option>
+            <option value="title-asc">🔤 Título (A-Z)</option>
+            <option value="title-desc">🔤 Título (Z-A)</option>
           </select>
 
           <!-- Type Filter Dropdown -->
           <select id="type-filter" onchange="applyGridFilters()" class="w-full md:w-auto bg-brand-dark text-xs text-slate-200 border border-brand-border rounded-lg px-3 py-2.5 sm:py-2 focus:outline-none focus:border-brand-red">
-            <option value="all">All Types (126)</option>
-            <option value="Tutorial">🎓 Tutorials & Masterclasses (44)</option>
-            <option value="Exemplo">🎬 Case Studies & Demos (76)</option>
+            <option value="all">Todos os Tipos (126)</option>
+            <option value="Tutorial">🎓 Apenas Tutoriais (44)</option>
+            <option value="Exemplo">🎬 Apenas Exemplos (76)</option>
           </select>
 
           <!-- Creator Filter (Dynamically populated) -->
           <select id="creator-filter" onchange="applyGridFilters()" class="w-full md:w-auto bg-brand-dark text-xs text-slate-200 border border-brand-border rounded-lg px-3 py-2.5 sm:py-2 focus:outline-none focus:border-brand-red">
-            <option value="all">👥 All Creators (50)</option>
+            <option value="all">👥 Todos os Criadores (50)</option>
           </select>
 
           <!-- Style Filter Dropdown (Dynamically populated) -->
           <select id="style-filter" onchange="applyGridFilters()" class="w-full md:w-auto bg-brand-dark text-xs text-slate-200 border border-brand-border rounded-lg px-3 py-2.5 sm:py-2 focus:outline-none focus:border-brand-red">
-            <option value="all">🎨 All Visual Styles (17)</option>
+            <option value="all">🎨 Todos os Estilos (17)</option>
           </select>
 
           <!-- Platform Filter -->
           <select id="platform-filter" onchange="applyGridFilters()" class="w-full md:w-auto bg-brand-dark text-xs text-slate-200 border border-brand-border rounded-lg px-3 py-2.5 sm:py-2 focus:outline-none focus:border-brand-red">
-            <option value="all">All Platforms</option>
+            <option value="all">Todas as Plataformas</option>
             <option value="YouTube">YouTube</option>
             <option value="Instagram">Instagram Reels</option>
             <option value="Pinterest">Pinterest Boards</option>
@@ -529,64 +631,6 @@
         </div>
       </div>
 
-      <!-- SUBDIVISION 1: CREATORS SPOTLIGHT & PROFILE CARDS -->
-      <div id="creators-section" class="p-4 sm:p-6 rounded-2xl bg-brand-card/85 border border-brand-border/80 space-y-4 transition-all">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-3">
-          <div>
-            <h3 class="text-xs sm:text-base font-bold font-display text-white flex items-center gap-2">
-              <span>👥</span>
-              <span>Creators & Motion Studios</span>
-              <span class="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-slate-300 font-bold font-mono">50 Creator Profiles</span>
-              <span id="active-creator-pill" class="text-[10px] px-2 py-0.5 rounded-full bg-brand-red text-white font-bold hidden">Filtering</span>
-            </h3>
-            <p class="text-xs text-slate-400 mt-0.5">Explore motion signatures, art styles and portfolios of featured creators.</p>
-          </div>
-
-          <div class="flex items-center gap-2">
-            <div class="relative">
-              <input 
-                type="text" 
-                id="creator-quick-search" 
-                placeholder="Search creator..." 
-                class="bg-brand-dark text-xs text-white placeholder-slate-500 pl-7 pr-3 py-1.5 rounded-lg border border-brand-border focus:border-brand-red focus:outline-none w-36 sm:w-44"
-                oninput="handleCreatorSearch(this.value)"
-              >
-              <span class="absolute left-2.5 top-1.5 text-slate-500 text-xs">🔍</span>
-            </div>
-            <button onclick="filterByCreator('all')" class="text-xs text-slate-300 hover:text-white px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-colors whitespace-nowrap">
-              Show All
-            </button>
-          </div>
-        </div>
-
-        <!-- Mini Profile Cards Grid -->
-        <div id="creator-cards-grid" class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-2.5 sm:gap-3.5">
-          <!-- Rendered via JS -->
-        </div>
-
-        <!-- Expand / Collapse Creators -->
-        <div id="creator-expand-container" class="pt-2 text-center">
-          <button id="creator-expand-btn" onclick="toggleCreatorsExpand()" class="text-xs text-indigo-400 hover:text-indigo-300 font-semibold px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all inline-flex items-center gap-1.5 shadow-sm">
-            <span>Show all 50 creators</span>
-            <span>↓</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- SUBDIVISION 2: VISUAL STYLES & ART DIRECTION -->
-      <div id="styles-section" class="p-4 sm:p-5 rounded-2xl bg-brand-card/70 border border-brand-border/80 space-y-3 transition-all">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-          <h3 class="text-xs sm:text-sm font-bold font-display text-white flex items-center gap-2">
-            <span>🎨</span>
-            <span>Visual Styles & Art Direction</span>
-          </h3>
-          <span class="text-[11px] text-slate-400">Filter by aesthetic, physics easing and motion grammar</span>
-        </div>
-        <div id="style-pills-container" class="flex flex-wrap gap-1.5 sm:gap-2">
-          <!-- Populated via JS -->
-        </div>
-      </div>
-
       <!-- Grid Cards Container (Full Responsive Width) -->
       <div id="grid-cards-container" class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-3.5 sm:gap-5">
         <!-- Rendered via JS -->
@@ -595,6 +639,19 @@
     </div>
 
   </main>
+
+  <!-- ==================== CREATOR PROFILE MODAL (DEDICATED CREATOR BIO & WORKS) ==================== -->
+  <div id="creator-profile-modal" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-6 bg-black/85 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-300">
+    <div id="creator-modal-box" class="relative bg-brand-card w-full max-w-5xl h-[94vh] sm:h-auto sm:max-h-[90vh] rounded-t-3xl sm:rounded-3xl border-t sm:border border-brand-border shadow-2xl overflow-hidden flex flex-col scale-95 transition-transform duration-300">
+      <!-- Close Button -->
+      <button onclick="closeCreatorProfileModal()" class="absolute top-4 right-4 z-30 w-10 h-10 rounded-full bg-brand-dark/80 hover:bg-brand-red text-white flex items-center justify-center backdrop-blur-md border border-white/15 transition-colors shadow-lg">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <!-- Creator Modal Content Injected via JS -->
+      <div id="creator-modal-content" class="overflow-y-auto flex-1"></div>
+    </div>
+  </div>
 
   <!-- ==================== NETFLIX EPISODE / MOVIE DETAIL MODAL ==================== -->
   <div id="detail-modal" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-6 bg-black/85 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-300">
@@ -899,7 +956,7 @@
       sessionStorage.setItem('dismiss_proto_banner', 'true');
     }
 
-    // English mapping for motion design visual styles
+    // English mapping & detailed specifications for all 17 motion design visual styles
     const STYLE_LABELS_EN = {
       "Interface de produto": "Product UI",
       "Minimalista": "Minimalist",
@@ -920,15 +977,249 @@
       "Lousa": "Whiteboard"
     };
 
+    const STYLE_SPECIFICATIONS = {
+      "Interface de produto": {
+        icon: "📱",
+        gradient: "from-indigo-600 to-blue-600",
+        aesthetic: "Interfaces limpas em camadas, cards flutuantes com bordas translúcidas (1px), cursores coreografados e foco em microinterações de tela.",
+        physics: "Curvas em S acentuadas (Ease Out 80% / Ease In 20%), morphing contínuo entre estados de botões e stagger de 2 a 3 frames entre listas.",
+        useCase: "Demonstrações de aplicativos, lançamentos de produtos digitais, onboarding e vídeos de funcionalidades."
+      },
+      "Minimalista": {
+        icon: "⚪",
+        gradient: "from-slate-600 to-zinc-700",
+        aesthetic: "Amplos espaços negativos (respiro visual), paleta reduzida a 2 ou 3 tons, formas geométricas puras e ausência de ornamentos desnecessários.",
+        physics: "Acelerações ultra-suaves com desaceleração longa no final (exponential ease-out), mantendo um único foco de atenção por cena.",
+        useCase: "Branding de luxo, apresentações institucionais, fintechs e identidades visuais elegantes."
+      },
+      "Tipografia cinética": {
+        icon: "🔤",
+        gradient: "from-rose-600 to-orange-600",
+        aesthetic: "O texto é o protagonista absoluto: fontes neo-grotescas pesadas, grids suíços rigorosos, distorção elástica de letras e alto contraste.",
+        physics: "Saída explosiva no Graph Editor (90% de influência inicial) com 'snap & cushion' nos últimos 3 frames, sincronizada com a locução ou batida.",
+        useCase: "Reels de retenção, manifestos de marca, aberturas de eventos, lyric videos e cortes dinâmicos."
+      },
+      "Anúncio": {
+        icon: "🚀",
+        gradient: "from-amber-500 to-red-600",
+        aesthetic: "Direção de arte comercial de alto impacto, ganchos visuais nos primeiros 2 segundos, contraste de cor vibrante e call-to-action claro.",
+        physics: "Ritmo acelerado com cortes em movimento (match cuts), whip pans rápidos e transições invisíveis que prendem o olhar.",
+        useCase: "Campanhas de performance, comerciais de lançamento, anúncios para redes sociais e promos de produto."
+      },
+      "Apple claro": {
+        icon: "🍎",
+        gradient: "from-cyan-500 to-blue-600",
+        aesthetic: "Fundos claros (#F5F5F7), vidro fosco (glassmorphism), sombras difusas multicamadas, iluminação de estúdio suave e tipografia San Francisco/Inter.",
+        physics: "Física de mola inercial calibrada (overshoot sutil de 8% a 12%), botões que expandem em pílulas (Dynamic Island) e fluidez a 60fps.",
+        useCase: "Keynotes de tecnologia, vídeos estilo Apple, showcases de iOS/macOS e produtos premium."
+      },
+      "Escuro com neon": {
+        icon: "⚡",
+        gradient: "from-purple-600 via-fuchsia-600 to-cyan-500",
+        aesthetic: "Backgrounds profundos (#0B0C10) contrastados por luzes emissivas (Deep Glow), refração de vidro escuro, feixes de luz e estética cyber-tech.",
+        physics: "Movimentos de câmera 3D imersivos no eixo Z (dolly zoom), brilhos pulsantes reativos e revelações de borda luminosa (trim paths + glow).",
+        useCase: "Produtos de IA, cripto/web3, games, dashboards dark-mode e trailers tecnológicos."
+      },
+      "SaaS": {
+        icon: "💻",
+        gradient: "from-emerald-500 to-teal-600",
+        aesthetic: "Abstração simplificada de dashboards complexos: gráficos que crescem, janelas modulares em perspectiva isométrica ou 2.5D e conexões de nós.",
+        physics: "Animação guiada pelo trajeto do cursor: clique com compressão de escala (100% → 94% → 100%) seguido de resposta elástica dos componentes.",
+        useCase: "Explainers de startups B2B, páginas de vendas de softwares, tours de plataforma e vídeos para Product Hunt."
+      },
+      "3D": {
+        icon: "🧊",
+        gradient: "from-violet-600 to-indigo-700",
+        aesthetic: "Volume tridimensional real ou 2.5D avançado, shaders metálicos, vidro refrativo, iluminação volumétrica e profundidade de campo (DOF).",
+        physics: "Câmeras com inércia física real, rotação orbital contínua e colisões ou flutuação suave com ruído procedural (noise/wiggle lento).",
+        useCase: "Reveals de hardware, ícones 3D interativos (Spline/Blender/C4D), vinhetas e hero sections."
+      },
+      "Narrado": {
+        icon: "🎙️",
+        gradient: "from-blue-600 to-indigo-600",
+        aesthetic: "Visual totalmente subordinado à voz (voiceover): cada palavra-chave falada dispara um ícone, metáfora visual ou destaque na tela.",
+        physics: "Timing ditado pela cadência da fala, com pausas dramáticas (holds) e entradas rápidas exatamente nas sílabas tônicas.",
+        useCase: "Vídeos explicativos, estudos de caso no Instagram/YouTube, aulas e storytelling de negócios."
+      },
+      "Edit musical": {
+        icon: "🎵",
+        gradient: "from-pink-600 to-rose-600",
+        aesthetic: "Montagem rítmica de alta energia onde cortes, zooms, flashes e máscaras seguem rigorosamente o BPM e os transientes da faixa musical.",
+        physics: "Curvas de velocidade extremas (Time Remapping / Speed Ramp) que aceleram no corte e congelam na batida seca (kick/snare).",
+        useCase: "Reels virais, TikTok edits, teasers de eventos, moda e vídeos de impacto rápido."
+      },
+      "Cinematográfico": {
+        icon: "🎬",
+        gradient: "from-amber-600 to-stone-800",
+        aesthetic: "Proporção widescreen, color grading dramático, granulação de película (film grain), aberração cromática sutil e composição fotográfica.",
+        physics: "Movimentos de câmera orgânicos (handheld sutil ou dolly lento), dissoluções atmosféricas e ritmo contemplativo alternado com clímax.",
+        useCase: "Filmes de marca (brand films), trailers, documentários e comerciais emocionais."
+      },
+      "Sound design": {
+        icon: "🎧",
+        gradient: "from-orange-500 to-amber-600",
+        aesthetic: "A imagem parece 'fazer barulho': cada clique, deslize, morph ou rotação possui textura sonora tátil (foleys mecânicos, risers, whooshes e sub-bass).",
+        physics: "Sincronia milimétrica ao frame entre o pico de velocidade no Graph Editor e o transiente sonoro.",
+        useCase: "Showreels de motion, UI motion tátil, sound redesigns e comerciais imersivos."
+      },
+      "Colagem": {
+        icon: "✂️",
+        gradient: "from-yellow-600 to-red-600",
+        aesthetic: "Mistura de recortes fotográficos, texturas de papel rasgado, rabiscos manuais, meios-tons (halftone) e sobreposições analógicas.",
+        physics: "Taxa de quadros reduzida (posterizeTime em 8fps ou 12fps) simulando stop-motion tátil e cortes secos sem interpolação lisa.",
+        useCase: "Editoriais de cultura, música, história, moda e vídeos autorais com personalidade artesanal."
+      },
+      "Colagem estilo Vox": {
+        icon: "🗞️",
+        gradient: "from-teal-600 to-emerald-700",
+        aesthetic: "Jornalismo visual explicativo: recortes de arquivo, marca-texto animado sobre documentos, mapas em câmera 3D e gráficos históricos claros.",
+        physics: "Combinação de câmera 3D fluida sobre mesa de documentos com elementos recortados em 12fps e revelações de linha.",
+        useCase: "Ensaios em vídeo (video essays), documentários curtos, canais de educação e análises de mercado."
+      },
+      "Documental": {
+        icon: "📽️",
+        gradient: "from-slate-700 to-stone-800",
+        aesthetic: "Narrativa investigativa com estética de arquivo, linhas do tempo históricas, fotografias com parallax 2.5D e tipografia editorial séria.",
+        physics: "Zooms lentos contínuos (Ken Burns avançado com separação de planos) e transições sobrias.",
+        useCase: "Documentários, biografias, jornalismo investigativo e retrospectivas."
+      },
+      "UGC": {
+        icon: "🤳",
+        gradient: "from-rose-500 to-pink-600",
+        aesthetic: "Estética nativa de redes sociais (User Generated Content) combinada com motion graphics sobrepostos, legendas dinâmicas e cards flutuantes.",
+        physics: "Entradas rápidas de pop-up nos primeiros 3 segundos para retenção no feed vertical (9:16).",
+        useCase: "Criativos de tráfego pago (Ads), depoimentos dinâmicos e vídeos curtos de conversão."
+      },
+      "Lousa": {
+        icon: "✏️",
+        gradient: "from-sky-600 to-blue-700",
+        aesthetic: "Traços desenhados em tempo real (trim paths), diagramas esquemáticos e explicação visual passo a passo como em um quadro negro/branco.",
+        physics: "Velocidade constante de desenho acompanhando o raciocínio do narrador.",
+        useCase: "Aulas didáticas, explicações de arquitetura de sistemas e treinamentos."
+      }
+    };
+
+    // Curated Creator Bios & Roles ("Quem é esse criador")
+    const CREATOR_BIOS = {
+      "YouMotion": {
+        role: "Estúdio de Sistemas & Templates AE",
+        bio: "Referência global em sistemas modulares de UI Motion e templates avançados de After Effects voltados para lançamentos de produtos SaaS e interfaces minimalistas."
+      },
+      "NaughtyyJuan": {
+        role: "Criador de Edits Rítmicos & Sound Design",
+        bio: "Especialista em sincronia musical extrema, tipografia cinética explosiva e transições guiadas por sound design tátil para YouTube e Instagram."
+      },
+      "Multiply Sound": {
+        role: "Estúdio de Sound Design & Foley",
+        bio: "Canal e laboratório focado na camada invisível do motion: construção de paisagens sonoras, foleys mecânicos e texturas acústicas que dão peso físico à animação."
+      },
+      "Pinterest Curadoria": {
+        role: "Acervo de Direção de Arte & Loops",
+        bio: "Coleção curada de pranchas visuais com foco em microinterações de interface, estética escuro com neon, shaders 3D e referências rápidas de movimento."
+      },
+      "Higgsfield AI": {
+        role: "Laboratório de Vídeo Generativo & IA",
+        bio: "Pioneira em controle de câmera cinematográfica e direção de movimento assistida por inteligência artificial generativa para comerciais e cenas hiper-realistas."
+      },
+      "uxpeak": {
+        role: "Educador de UI/UX & Product Motion",
+        bio: "Especialista em design de interfaces e microinterações aplicadas a produtos digitais reais, ensinando como o movimento melhora a usabilidade e percepção de valor."
+      },
+      "@fernandoaraujo (Brabo)": {
+        role: "Diretor de Motion & Criativos High-End",
+        bio: "Criador brasileiro reconhecido pela direção de arte impecável em vídeos comerciais, anúncios de alta retenção e interfaces minimalistas."
+      },
+      "@illdari": {
+        role: "Artista de Tipografia Cinética & 3D",
+        bio: "Combina tipografia experimental, elementos 3D e layouts arrojados em composições verticais de forte impacto visual no Instagram."
+      },
+      "Clube do Motion": {
+        role: "Comunidade & Educação de Motion BR",
+        bio: "Focado em formatos narrados de alta conversão para o mercado brasileiro, unindo storytelling comercial, telas de iPhone em estilo Apple e retenção."
+      },
+      "Bart_VFX": {
+        role: "Especialista em Física de Mola & Apple UI",
+        bio: "Mestre técnico de After Effects famoso por dissecar o estilo Apple com expressões de mola inercial (Dan Ebberts) e morphing contínuo de formas."
+      },
+      "Ben Marriott": {
+        role: "Educador & Mestre de Motion Design",
+        bio: "Um dos maiores educadores de After Effects do mundo. Seu trabalho une curvas de Graph Editor perfeitas, texturas táteis de grão/colagem e design inteligente."
+      },
+      "School of Motion": {
+        role: "A Maior Escola de Motion do Mundo",
+        bio: "Instituição referência na formação de motion designers profissionais, com foco nos 12 princípios da animação, curvas de velocidade e pipelines de estúdio."
+      },
+      "Jake In Motion": {
+        role: "Educador Técnico de After Effects",
+        bio: "Conhecido por explicar cada efeito, expressão e ferramenta nativa do After Effects com clareza cirúrgica e exemplos práticos de mercado."
+      },
+      "Vox Style Lab": {
+        role: "Estúdio de Jornalismo Visual & Colagem",
+        bio: "Especializado na estética documental consagrada pela Vox: câmeras 3D sobre documentos históricos, recortes em stop-motion (12fps) e infográficos vivos."
+      },
+      "Daniel Schiffer": {
+        role: "Diretor de Comerciais & Edição Dinâmica",
+        bio: "Referência mundial em comerciais de produto ultra-dinâmicos, iluminação dramática, match cuts perfeitos e ritmo cinematográfico."
+      },
+      "Editwithtrix": {
+        role: "Especialista em Vídeos SaaS & Explainers",
+        bio: "Criador focado em vídeos explicativos de tecnologia e SaaS, transformando telas estáticas em narrativas fluidas guiadas por voz."
+      },
+      "MahdiEdits": {
+        role: "Editor de Narrativas Visuais & SaaS",
+        bio: "Domina a estrutura de vídeos para startups e criadores digitais, com foco em retenção, ritmo limpo e transições suaves de interface."
+      },
+      "Mojtaba Sorbi": {
+        role: "Designer de Interfaces & Cyber Neon",
+        bio: "Reconhecido pelo uso de iluminação neon sobre fundos escuros, tipografia moderna e animações de produto com estética futurista."
+      },
+      "Zelios": {
+        role: "Estúdio de Vídeos Explicativos SaaS",
+        bio: "Produtora especializada em comerciais animados e explainers para empresas de tecnologia, combinando clareza minimalista e alto padrão de acabamento."
+      },
+      "Android": {
+        role: "Equipe de Brand & Motion Design Google",
+        bio: "Direção de arte oficial do ecossistema Android e Gemini, mesclando filmagens reais com camadas de vidro (glassmorphism) e estados fluidos de IA."
+      },
+      "Google Workspace": {
+        role: "Equipe de Product Motion do Google",
+        bio: "Referência em motion design corporativo limpo, didático e acessível, demonstrando ferramentas complexas com simplicidade visual."
+      }
+    };
+
     function getStyleLabelEN(rawStyle) {
       return STYLE_LABELS_EN[rawStyle] || rawStyle;
     }
 
+    function getCreatorMeta(c) {
+      if (CREATOR_BIOS[c.name]) {
+        return CREATOR_BIOS[c.name];
+      }
+      // Smart automatic bio based on their real works, platform, and styles
+      const stylesStr = (c.rawStyles || []).slice(0, 2).join(' e ') || 'Motion Design';
+      const role = c.primaryPlatform === 'YouTube' ? 'Criador & Educador no YouTube'
+        : c.primaryPlatform === 'Instagram' ? 'Especialista em Reels & Motion'
+        : c.primaryPlatform === 'TikTok' ? 'Criador de Edits Dinâmicos'
+        : c.primaryPlatform === 'Template' ? 'Autor de Sistemas After Effects'
+        : 'Estúdio & Criador de Motion';
+      const techSnippet = c.sampleTech ? `Destaca-se pelo uso de ${c.sampleTech.split(',')[0].trim()}.` : '';
+      return {
+        role,
+        bio: `Referência no catálogo em ${stylesStr}, com ${c.count} ${c.count === 1 ? 'obra catalogada' : 'obras catalogadas'} na plataforma ${c.primaryPlatform}. ${techSnippet}`
+      };
+    }
+
+    function getCreatorAvatarUrl(name, gradHex = 'E50914') {
+      const cleanName = encodeURIComponent(name.replace(/[@()]/g, '').trim());
+      return `https://ui-avatars.com/api/?name=${cleanName}&background=${gradHex}&color=ffffff&size=128&bold=true&font-size=0.4`;
+    }
+
     // Creator Profile State
     let allCreatorsList = [];
-    let creatorsExpanded = false;
     let currentActiveCreator = 'all';
     let currentCreatorSearchQuery = '';
+    let currentCreatorCategoryFilter = 'all';
+    let currentSelectedStyleSection = 'all';
 
     function getInitials(name) {
       if (!name) return 'MF';
@@ -952,10 +1243,17 @@
             count: 0,
             styles: {},
             platforms: {},
-            firstId: item.id
+            firstId: item.id,
+            ytId: null,
+            sampleUrl: null,
+            sampleTech: item.techniques || '',
+            items: []
           };
         }
         creatorMap[c].count++;
+        creatorMap[c].items.push(item);
+        if (!creatorMap[c].ytId && item.youtube_id) creatorMap[c].ytId = item.youtube_id;
+        if (!creatorMap[c].sampleUrl && item.url) creatorMap[c].sampleUrl = item.url;
         (item.styles || []).forEach(s => {
           creatorMap[c].styles[s] = (creatorMap[c].styles[s] || 0) + 1;
           styleCounts[s] = (styleCounts[s] || 0) + 1;
@@ -964,23 +1262,35 @@
         creatorMap[c].platforms[p] = (creatorMap[c].platforms[p] || 0) + 1;
       });
 
-      // Format creators with top styles and platform
+      // Format creators with full profile data
       allCreatorsList = Object.values(creatorMap).map(c => {
         const sortedStyles = Object.entries(c.styles).sort((a, b) => b[1] - a[1]);
         const sortedPlats = Object.entries(c.platforms).sort((a, b) => b[1] - a[1]);
-        return {
+        const rawStyles = sortedStyles.map(s => s[0]);
+        const baseObj = {
           name: c.name,
           count: c.count,
-          topStyles: sortedStyles.slice(0, 2).map(s => getStyleLabelEN(s[0])),
+          rawStyles,
+          topStyles: sortedStyles.slice(0, 3).map(s => getStyleLabelEN(s[0])),
           primaryPlatform: sortedPlats[0] ? sortedPlats[0][0] : 'Web',
-          dominantStyle: sortedStyles[0] ? sortedStyles[0][0] : 'Motion Design'
+          dominantStyle: sortedStyles[0] ? sortedStyles[0][0] : 'Motion Design',
+          ytId: c.ytId,
+          sampleUrl: c.sampleUrl,
+          sampleTech: c.sampleTech,
+          items: c.items
+        };
+        const meta = getCreatorMeta(baseObj);
+        return {
+          ...baseObj,
+          role: meta.role,
+          bio: meta.bio
         };
       }).sort((a, b) => b.count - a.count);
 
-      // Populate Select Dropdown
+      // Populate Select Dropdown in Showcase Grid
       const creatorSelect = document.getElementById('creator-filter');
       if (creatorSelect) {
-        creatorSelect.innerHTML = '<option value="all">👥 All Creators (50)</option>';
+        creatorSelect.innerHTML = `<option value="all">👥 Todos os Criadores (${allCreatorsList.length})</option>`;
         allCreatorsList.forEach(c => {
           const opt = document.createElement('option');
           opt.value = c.name;
@@ -989,10 +1299,10 @@
         });
       }
 
-      // Render Mini Profile Cards
+      // Render Dedicated Creator Profile Cards
       renderCreatorCards();
 
-      // 2. Populate Style Filter Select & Style Pills (ALL 17 STYLES)
+      // Populate Style Filter Select & Dedicated Style Sections (ALL 17 STYLES)
       const styleContainer = document.getElementById('style-pills-container');
       const styleSelect = document.getElementById('style-filter');
       const sortedStyles = Object.entries(styleCounts).sort((a, b) => b[1] - a[1]);
@@ -1001,40 +1311,431 @@
         styleContainer.innerHTML = '';
 
         const allStyleBtn = document.createElement('button');
-        allStyleBtn.className = 'style-pill active px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-red text-white shadow-lg shadow-brand-red/30 transition-all flex items-center gap-1.5';
-        allStyleBtn.innerHTML = `<span>All Styles</span><span class="text-[10px] px-1.5 py-0.2 rounded-full bg-white/20 text-white font-bold">${allData.length}</span>`;
-        allStyleBtn.onclick = () => filterByStyle('all');
+        allStyleBtn.className = 'style-pill active px-3.5 py-2 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all flex items-center gap-1.5';
+        allStyleBtn.innerHTML = `<span>📚 Todos os Estilos Separados</span><span class="text-[10px] px-1.5 py-0.2 rounded-full bg-white/20 text-white font-bold">${sortedStyles.length}</span>`;
+        allStyleBtn.onclick = () => selectStyleSection('all');
         styleContainer.appendChild(allStyleBtn);
 
         sortedStyles.forEach(([sName, count]) => {
+          const spec = STYLE_SPECIFICATIONS[sName] || { icon: '🎨' };
           const enLabel = getStyleLabelEN(sName);
           const btn = document.createElement('button');
-          btn.className = 'style-pill px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 hover:border-brand-red transition-all flex items-center gap-1.5';
-          btn.innerHTML = `<span>${enLabel}</span><span class="text-[10px] px-1.5 py-0.2 rounded-full bg-white/10 text-slate-400 font-bold">${count}</span>`;
-          btn.onclick = () => filterByStyle(sName);
+          btn.setAttribute('data-style-name', sName);
+          btn.className = 'style-pill px-3.5 py-2 rounded-xl text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 hover:border-indigo-500 transition-all flex items-center gap-1.5';
+          btn.innerHTML = `<span>${spec.icon}</span><span>${sName}</span><span class="text-[10px] text-slate-500">(${enLabel})</span><span class="text-[10px] px-1.5 py-0.2 rounded-full bg-white/10 text-slate-300 font-bold">${count}</span>`;
+          btn.onclick = () => selectStyleSection(sName);
           styleContainer.appendChild(btn);
         });
       }
 
       if (styleSelect) {
-        styleSelect.innerHTML = '<option value="all">🎨 All Visual Styles (17)</option>';
+        styleSelect.innerHTML = `<option value="all">🎨 Todos os Estilos (${sortedStyles.length})</option>`;
         sortedStyles.forEach(([sName, count]) => {
           const enLabel = getStyleLabelEN(sName);
           const opt = document.createElement('option');
           opt.value = sName;
-          opt.innerText = `${enLabel} (${count})`;
+          opt.innerText = `${sName} · ${enLabel} (${count})`;
           styleSelect.appendChild(opt);
         });
       }
+
+      // Render Dedicated Style Sections
+      renderStylesSections('all');
     }
 
-    // Reset all filters to eliminate empty states
+    function filterCreatorCategory(cat) {
+      currentCreatorCategoryFilter = cat;
+      document.querySelectorAll('.creator-cat-pill').forEach(btn => {
+        if (btn.getAttribute('data-ccat') === cat) {
+          btn.className = 'creator-cat-pill active px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-red text-white shadow-lg shadow-brand-red/30 transition-all whitespace-nowrap';
+        } else {
+          btn.className = 'creator-cat-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all whitespace-nowrap';
+        }
+      });
+      renderCreatorCards();
+    }
+
+    // Render Rich Creator Profile Cards on #creators-view
+    function renderCreatorCards() {
+      const container = document.getElementById('creator-cards-grid');
+      if (!container) return;
+      container.innerHTML = '';
+
+      let list = allCreatorsList;
+
+      if (currentCreatorCategoryFilter !== 'all') {
+        if (currentCreatorCategoryFilter === 'AI') {
+          list = list.filter(c => c.name.toLowerCase().includes('ai') || c.name.toLowerCase().includes('higgsfield') || c.primaryPlatform.includes('prompt'));
+        } else {
+          list = list.filter(c => c.primaryPlatform === currentCreatorCategoryFilter);
+        }
+      }
+
+      if (currentCreatorSearchQuery) {
+        list = list.filter(c => 
+          c.name.toLowerCase().includes(currentCreatorSearchQuery) ||
+          c.bio.toLowerCase().includes(currentCreatorSearchQuery) ||
+          c.role.toLowerCase().includes(currentCreatorSearchQuery) ||
+          c.rawStyles.some(s => s.toLowerCase().includes(currentCreatorSearchQuery)) ||
+          c.topStyles.some(s => s.toLowerCase().includes(currentCreatorSearchQuery))
+        );
+      }
+
+      if (list.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full py-12 text-center text-slate-400 bg-brand-card rounded-2xl border border-brand-border">
+            <p class="font-bold text-base text-white">Nenhum criador encontrado com esse filtro.</p>
+            <button onclick="filterCreatorCategory('all'); handleCreatorSearch(''); document.getElementById('creator-quick-search').value='';" class="mt-3 px-4 py-2 rounded-xl bg-brand-red text-white text-xs font-bold">Mostrar Todos os 50 Criadores</button>
+          </div>
+        `;
+        return;
+      }
+
+      list.forEach(c => {
+        const primaryStyle = c.topStyles[0] || 'Motion';
+        const platIcon = getPlatformIcon(c.primaryPlatform);
+
+        // Color theme & Avatar Hex by style
+        let grad = 'from-blue-600 via-indigo-600 to-cyan-500';
+        let hex = '4F46E5';
+        if (primaryStyle.includes('Sound') || primaryStyle.includes('Music')) {
+          grad = 'from-amber-500 via-orange-600 to-rose-600';
+          hex = 'EA580C';
+        } else if (primaryStyle.includes('3D') || primaryStyle.includes('Neon') || primaryStyle.includes('Cyber')) {
+          grad = 'from-purple-600 via-fuchsia-600 to-indigo-700';
+          hex = '9333EA';
+        } else if (primaryStyle.includes('Type') || primaryStyle.includes('Ads')) {
+          grad = 'from-rose-600 via-red-600 to-amber-600';
+          hex = 'E11D48';
+        } else if (primaryStyle.includes('SaaS') || primaryStyle.includes('Clean')) {
+          grad = 'from-emerald-500 via-teal-600 to-cyan-600';
+          hex = '0D9488';
+        }
+
+        const coverBannerImg = c.ytId ? `https://img.youtube.com/vi/${c.ytId}/mqdefault.jpg` : '';
+        const avatarUrl = getCreatorAvatarUrl(c.name, hex);
+
+        const card = document.createElement('div');
+        card.className = 'group relative rounded-2xl bg-brand-card border border-brand-border/80 hover:border-brand-red overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-brand-red/15 hover:-translate-y-1';
+
+        const stylePillsHtml = c.rawStyles.slice(0, 3).map(s => `
+          <span class="px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-[10px] text-slate-300 font-medium">${s}</span>
+        `).join('');
+
+        const sampleWorksPreview = c.items.slice(0, 2).map(w => `
+          <div onclick="openModal(${w.id}); event.stopPropagation();" class="p-2 rounded-lg bg-brand-dark/80 hover:bg-white/10 border border-white/5 flex items-center justify-between gap-2 cursor-pointer transition-colors">
+            <div class="flex items-center gap-2 min-w-0">
+              <span class="text-xs shrink-0">${w.type === 'Tutorial' ? '🎓' : '🎬'}</span>
+              <span class="text-[11px] text-slate-200 font-medium truncate">${w.title}</span>
+            </div>
+            <span class="text-[10px] text-brand-red font-bold shrink-0">▶</span>
+          </div>
+        `).join('');
+
+        card.innerHTML = `
+          <div>
+            <!-- Top Profile Banner Cover -->
+            <div class="relative h-24 w-full bg-gradient-to-r ${grad} overflow-hidden">
+              ${coverBannerImg ? `<img src="${coverBannerImg}" alt="${c.name}" loading="lazy" class="w-full h-full object-cover opacity-45 group-hover:scale-105 transition-transform duration-500">` : ''}
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-brand-card/30 to-transparent"></div>
+              <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-[10px] font-bold text-white flex items-center gap-1">
+                <span>${platIcon}</span>
+                <span>${c.primaryPlatform}</span>
+              </span>
+            </div>
+
+            <!-- Overlapping Profile Photo / Avatar & Identity -->
+            <div class="px-5 -mt-9 relative z-10 flex items-end justify-between gap-2">
+              <div class="relative">
+                <img src="${avatarUrl}" alt="${c.name}" class="w-16 h-16 rounded-2xl object-cover border-4 border-brand-card shadow-xl bg-brand-dark">
+                <span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-emerald-500 border-2 border-brand-card flex items-center justify-center text-[9px] text-white font-bold" title="Criador Verificado no Catálogo">✓</span>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-brand-red/15 border border-brand-red/30 text-brand-red text-[11px] font-bold">
+                ${c.count} ${c.count === 1 ? 'obra' : 'obras'}
+              </span>
+            </div>
+
+            <!-- Creator Name, Role & "Quem é" Bio -->
+            <div class="p-5 pt-3 space-y-3">
+              <div>
+                <h3 class="font-display font-extrabold text-base sm:text-lg text-white group-hover:text-brand-red transition-colors flex items-center gap-1.5">
+                  <span class="truncate">${c.name}</span>
+                </h3>
+                <p class="text-[11px] font-semibold text-indigo-400">${c.role}</p>
+              </div>
+
+              <!-- Quem é esse criador -->
+              <div class="p-3 rounded-xl bg-brand-dark/60 border border-white/5">
+                <div class="text-[9px] uppercase font-bold text-slate-400 tracking-wider mb-1">Quem é & Identidade:</div>
+                <p class="text-xs text-slate-300 leading-relaxed line-clamp-3">${c.bio}</p>
+              </div>
+
+              <!-- Dominant Styles -->
+              <div>
+                <div class="text-[9px] uppercase font-bold text-slate-500 tracking-wider mb-1.5">Estilos Dominantes:</div>
+                <div class="flex flex-wrap gap-1.5">
+                  ${stylePillsHtml}
+                </div>
+              </div>
+
+              <!-- Mini Preview of Works -->
+              <div class="space-y-1.5 pt-1">
+                <div class="text-[9px] uppercase font-bold text-slate-500 tracking-wider">Obras em Destaque:</div>
+                ${sampleWorksPreview}
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Footer Actions -->
+          <div class="px-5 py-3.5 bg-brand-dark/50 border-t border-white/5 flex items-center justify-between gap-2">
+            <button onclick="openCreatorProfileModal('${c.name.replace(/'/g, "\\'")}')" class="flex-1 py-2 px-3 rounded-xl bg-brand-red hover:bg-rose-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md shadow-brand-red/20 transition-all">
+              <span>Ver Perfil Completo & Obras (${c.count})</span>
+              <span>→</span>
+            </button>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    // Open Dedicated Creator Profile Modal (Bio + Technical Signature + All Works of that Creator)
+    function openCreatorProfileModal(creatorName) {
+      const c = allCreatorsList.find(x => x.name === creatorName);
+      if (!c) return;
+
+      const modal = document.getElementById('creator-profile-modal');
+      const box = document.getElementById('creator-modal-box');
+      const content = document.getElementById('creator-modal-content');
+      if (!modal || !content) return;
+
+      const avatarUrl = getCreatorAvatarUrl(c.name, 'E50914');
+      const coverBannerImg = c.ytId ? `https://img.youtube.com/vi/${c.ytId}/maxresdefault.jpg` : '';
+      const platIcon = getPlatformIcon(c.primaryPlatform);
+
+      const styleBadges = c.rawStyles.map(s => `
+        <button onclick="closeCreatorProfileModal(); selectStyleSection('${s}');" class="px-3 py-1 rounded-full bg-white/10 hover:bg-brand-red text-xs font-semibold text-white border border-white/10 transition-colors">
+          🎨 ${s} (${getStyleLabelEN(s)})
+        </button>
+      `).join('');
+
+      content.innerHTML = `
+        <!-- Banner Header -->
+        <div class="relative h-44 sm:h-56 w-full bg-gradient-to-r from-rose-950 via-slate-900 to-indigo-950 overflow-hidden">
+          ${coverBannerImg ? `<img src="${coverBannerImg}" alt="${c.name}" class="w-full h-full object-cover opacity-35 filter blur-[1px]">` : ''}
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-brand-card/60 to-transparent"></div>
+        </div>
+
+        <!-- Profile Header Body -->
+        <div class="px-6 sm:px-10 -mt-14 relative z-10 pb-8">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-white/10">
+            <div class="flex flex-col sm:flex-row sm:items-end gap-4">
+              <img src="${avatarUrl}" alt="${c.name}" class="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl object-cover border-4 border-brand-card shadow-2xl bg-brand-dark">
+              <div class="space-y-1">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-brand-red/20 border border-brand-red/40 text-brand-red text-[11px] font-bold uppercase">
+                  <span>${platIcon}</span>
+                  <span>${c.role}</span>
+                </div>
+                <h2 class="font-display font-black text-2xl sm:text-4xl text-white">${c.name}</h2>
+                <p class="text-xs sm:text-sm text-slate-400">${c.count} ${c.count === 1 ? 'referência catalogada' : 'referências catalogadas'} • Plataforma Principal: <strong class="text-white">${c.primaryPlatform}</strong></p>
+              </div>
+            </div>
+
+            ${c.sampleUrl ? `
+              <a href="${c.sampleUrl}" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs flex items-center gap-2 border border-white/15 transition-all self-start sm:self-end">
+                <span>Abrir Canal / Referência Original</span>
+                <span>↗</span>
+              </a>
+            ` : ''}
+          </div>
+
+          <!-- Bio & Technical Signature Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 my-6">
+            <div class="lg:col-span-2 p-5 rounded-2xl bg-brand-dark/70 border border-white/10 space-y-2">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-brand-red flex items-center gap-1.5">
+                <span>👤</span> Quem é ${c.name}
+              </h4>
+              <p class="text-sm text-slate-200 leading-relaxed">${c.bio}</p>
+              ${c.sampleTech ? `
+                <div class="pt-2 mt-2 border-t border-white/5 text-xs text-slate-400">
+                  <strong class="text-slate-200">Técnicas Recorrentes:</strong> ${c.sampleTech}
+                </div>
+              ` : ''}
+            </div>
+
+            <div class="p-5 rounded-2xl bg-brand-dark/70 border border-white/10 space-y-3">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-indigo-400 flex items-center gap-1.5">
+                <span>🎨</span> Estilos deste Criador
+              </h4>
+              <div class="flex flex-wrap gap-1.5">
+                ${styleBadges}
+              </div>
+            </div>
+          </div>
+
+          <!-- Creator's Dedicated Works Gallery -->
+          <div class="space-y-4 mt-6">
+            <div class="flex items-center justify-between">
+              <h3 class="font-display font-bold text-lg sm:text-xl text-white flex items-center gap-2">
+                <span>🎬</span>
+                <span>Obras, Estudos & Tutoriais de ${c.name}</span>
+                <span class="text-xs px-2.5 py-0.5 rounded-full bg-brand-red text-white font-bold">${c.count}</span>
+              </h3>
+            </div>
+            <div id="creator-modal-works-grid" class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-4"></div>
+          </div>
+        </div>
+      `;
+
+      const worksGrid = document.getElementById('creator-modal-works-grid');
+      if (worksGrid) {
+        c.items.forEach(item => {
+          const cardEl = createCardElement(item, true);
+          worksGrid.appendChild(cardEl);
+        });
+      }
+
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      box.classList.remove('scale-95');
+      box.classList.add('scale-100');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCreatorProfileModal() {
+      const modal = document.getElementById('creator-profile-modal');
+      const box = document.getElementById('creator-modal-box');
+      if (!modal || !box) return;
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      box.classList.add('scale-95');
+      box.classList.remove('scale-100');
+      document.body.style.overflow = '';
+    }
+
+    function handleCreatorSearch(val) {
+      currentCreatorSearchQuery = val.trim().toLowerCase();
+      renderCreatorCards();
+    }
+
+    // Select & Render Separated Style Sections on #styles-view
+    function selectStyleSection(styleName) {
+      currentSelectedStyleSection = styleName;
+      setView('styles');
+
+      document.querySelectorAll('#style-pills-container .style-pill').forEach((btn, idx) => {
+        const btnStyle = btn.getAttribute('data-style-name');
+        if ((styleName === 'all' && idx === 0) || (styleName !== 'all' && btnStyle === styleName)) {
+          btn.className = 'style-pill active px-3.5 py-2 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all flex items-center gap-1.5';
+        } else {
+          btn.className = 'style-pill px-3.5 py-2 rounded-xl text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 hover:border-indigo-500 transition-all flex items-center gap-1.5';
+        }
+      });
+
+      renderStylesSections(styleName);
+    }
+
+    function renderStylesSections(selectedStyle = 'all') {
+      const container = document.getElementById('styles-sections-container');
+      if (!container) return;
+      container.innerHTML = '';
+
+      // Group all references by style
+      const styleGroups = {};
+      allData.forEach(item => {
+        (item.styles || []).forEach(s => {
+          if (!styleGroups[s]) styleGroups[s] = [];
+          styleGroups[s].push(item);
+        });
+      });
+
+      let entries = Object.entries(styleGroups).sort((a, b) => b[1].length - a[1].length);
+      if (selectedStyle !== 'all') {
+        entries = entries.filter(([sName]) => sName.toLowerCase() === selectedStyle.toLowerCase());
+      }
+
+      entries.forEach(([sName, items]) => {
+        const spec = STYLE_SPECIFICATIONS[sName] || {
+          icon: '🎨',
+          gradient: 'from-indigo-600 to-purple-600',
+          aesthetic: 'Estilo visual caracterizado por direção de arte coesa e composição gráfica moderna.',
+          physics: 'Curvas de aceleração calibradas no Graph Editor para fluidez e leitura visual.',
+          useCase: 'Comerciais, vídeos de produto e peças para redes sociais.'
+        };
+        const enLabel = getStyleLabelEN(sName);
+
+        const section = document.createElement('section');
+        section.className = 'rounded-3xl bg-brand-card/90 border border-brand-border p-5 sm:p-8 space-y-6 shadow-xl';
+
+        section.innerHTML = `
+          <!-- Style Specification Header -->
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-5 border-b border-white/10">
+            <div class="flex items-start sm:items-center gap-3.5">
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr ${spec.gradient} flex items-center justify-center text-2xl sm:text-3xl shadow-lg shrink-0">
+                ${spec.icon}
+              </div>
+              <div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <h2 class="font-display font-black text-xl sm:text-3xl text-white">${sName}</h2>
+                  <span class="px-2.5 py-0.5 rounded-full bg-white/10 text-indigo-300 text-xs font-bold border border-indigo-500/30">${enLabel}</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-brand-red text-white text-xs font-bold">${items.length} ${items.length === 1 ? 'referência' : 'referências'}</span>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-400 mt-1">Ficha técnica de estilo, comportamento de keyframes e referências práticas.</p>
+              </div>
+            </div>
+
+            ${selectedStyle === 'all' ? `
+              <button onclick="selectStyleSection('${sName}')" class="self-start lg:self-center px-4 py-2 rounded-xl bg-white/5 hover:bg-indigo-600 text-slate-200 hover:text-white text-xs font-bold border border-white/10 transition-all shrink-0">
+                Focar apenas neste estilo →
+              </button>
+            ` : `
+              <button onclick="selectStyleSection('all')" class="self-start lg:self-center px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold border border-white/15 transition-all shrink-0">
+                ← Ver Todos os 17 Estilos
+              </button>
+            `}
+          </div>
+
+          <!-- 3 Technical Specification Pillars of this Style -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="p-4 rounded-2xl bg-brand-dark/80 border border-white/5 space-y-1.5">
+              <div class="text-[10px] font-bold uppercase tracking-wider text-indigo-400 flex items-center gap-1.5">
+                <span>🎨</span> Direção de Arte & Estética
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">${spec.aesthetic}</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-brand-dark/80 border border-white/5 space-y-1.5">
+              <div class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
+                <span>📈</span> Física & Graph Editor
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">${spec.physics}</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-brand-dark/80 border border-white/5 space-y-1.5">
+              <div class="text-[10px] font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
+                <span>🎯</span> Onde Aplicar
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">${spec.useCase}</p>
+            </div>
+          </div>
+
+          <!-- References Grid for this Specific Style -->
+          <div class="pt-2">
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center justify-between">
+              <span>🎬 Exemplos & Tutoriais do Estilo "${sName}" (${items.length})</span>
+            </div>
+            <div class="style-items-grid grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"></div>
+          </div>
+        `;
+
+        const gridEl = section.querySelector('.style-items-grid');
+        items.forEach(item => {
+          gridEl.appendChild(createCardElement(item, true));
+        });
+
+        container.appendChild(section);
+      });
+    }
+
+    // Reset all filters in Showcase Grid
     function resetAllGridFilters() {
       currentActiveCreator = 'all';
-      currentCreatorSearchQuery = '';
-      const creatorSearchInput = document.getElementById('creator-quick-search');
-      if (creatorSearchInput) creatorSearchInput.value = '';
-      renderCreatorCards();
       if (document.getElementById('type-filter')) document.getElementById('type-filter').value = 'all';
       if (document.getElementById('platform-filter')) document.getElementById('platform-filter').value = 'all';
       if (document.getElementById('style-filter')) document.getElementById('style-filter').value = 'all';
@@ -1047,19 +1748,6 @@
         const clearBtn = document.getElementById('clear-search-btn');
         if (clearBtn) clearBtn.classList.add('hidden');
       }
-
-      // Reset active pill classes
-      document.querySelectorAll('.creator-pill').forEach((btn, idx) => {
-        btn.className = idx === 0 
-          ? 'creator-pill active px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-red text-white shadow-lg shadow-brand-red/30 transition-all flex items-center gap-1.5'
-          : 'creator-pill px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 hover:border-brand-red transition-all flex items-center gap-1.5';
-      });
-      document.querySelectorAll('.style-pill').forEach((btn, idx) => {
-        btn.className = idx === 0 
-          ? 'style-pill active px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-red text-white shadow-lg shadow-brand-red/30 transition-all flex items-center gap-1.5'
-          : 'style-pill px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 hover:border-brand-red transition-all flex items-center gap-1.5';
-      });
-
       applyGridFilters();
     }
 
@@ -1070,209 +1758,26 @@
     }
 
     function showCreatorsView() {
-      setView('grid');
-      resetAllGridFilters();
-      const section = document.getElementById('creators-section');
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        section.classList.add('ring-2', 'ring-brand-red', 'shadow-2xl');
-        setTimeout(() => section.classList.remove('ring-2', 'ring-brand-red', 'shadow-2xl'), 2000);
-      }
+      setView('creators');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function showStylesView() {
-      setView('grid');
-      resetAllGridFilters();
-      const section = document.getElementById('styles-section');
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        section.classList.add('ring-2', 'ring-indigo-500', 'shadow-2xl');
-        setTimeout(() => section.classList.remove('ring-2', 'ring-indigo-500', 'shadow-2xl'), 2000);
-      }
-    }
-
-    // Render Creator Mini Profile Cards Grid
-    function renderCreatorCards() {
-      const container = document.getElementById('creator-cards-grid');
-      if (!container) return;
-      container.innerHTML = '';
-
-      let list = allCreatorsList;
-      if (currentCreatorSearchQuery) {
-        list = list.filter(c => 
-          c.name.toLowerCase().includes(currentCreatorSearchQuery) ||
-          c.topStyles.some(s => s.toLowerCase().includes(currentCreatorSearchQuery))
-        );
-      } else if (!creatorsExpanded) {
-        list = list.slice(0, 12); // Show top 12 featured creators by default
-      }
-
-      // Update Expand Button UI
-      const expandContainer = document.getElementById('creator-expand-container');
-      const expandBtn = document.getElementById('creator-expand-btn');
-      if (expandContainer && expandBtn) {
-        if (currentCreatorSearchQuery || allCreatorsList.length <= 12) {
-          expandContainer.classList.add('hidden');
-        } else {
-          expandContainer.classList.remove('hidden');
-          expandBtn.innerHTML = creatorsExpanded 
-            ? '<span>Collapse to 12 creators</span> <span>↑</span>' 
-            : `<span>Show all ${allCreatorsList.length} creators</span> <span>↓</span>`;
-        }
-      }
-
-      // Active Pill Indicator
-      const activePill = document.getElementById('active-creator-pill');
-      if (activePill) {
-        if (currentActiveCreator !== 'all') {
-          activePill.classList.remove('hidden');
-          activePill.innerHTML = `<span>Creator: ${currentActiveCreator}</span> <button onclick="filterByCreator('all'); event.stopPropagation();" class="ml-1 hover:text-black">✕</button>`;
-        } else {
-          activePill.classList.add('hidden');
-        }
-      }
-
-      list.forEach(c => {
-        const isActive = currentActiveCreator === c.name;
-        const inits = getInitials(c.name);
-        const primaryStyle = c.topStyles[0] || 'Motion';
-        const secondaryStyle = c.topStyles[1] || '';
-        const platIcon = getPlatformIcon(c.primaryPlatform);
-
-        // Color theme by style
-        let grad = 'from-blue-600 via-indigo-600 to-cyan-500';
-        if (primaryStyle.includes('Sound') || primaryStyle.includes('Music')) grad = 'from-amber-500 via-orange-600 to-rose-600';
-        else if (primaryStyle.includes('3D') || primaryStyle.includes('Neon') || primaryStyle.includes('Cyber')) grad = 'from-purple-600 via-fuchsia-600 to-indigo-700';
-        else if (primaryStyle.includes('Type') || primaryStyle.includes('Brand')) grad = 'from-rose-600 via-red-600 to-amber-600';
-        else if (primaryStyle.includes('AI') || primaryStyle.includes('Generative')) grad = 'from-emerald-500 via-teal-600 to-indigo-600';
-
-        const card = document.createElement('div');
-        card.className = `creator-card group relative p-3 sm:p-3.5 rounded-xl border transition-all duration-300 cursor-pointer flex flex-col justify-between ${
-          isActive 
-            ? 'bg-brand-red/15 border-brand-red ring-2 ring-brand-red shadow-lg shadow-brand-red/20' 
-            : 'bg-brand-dark/70 hover:bg-white/[0.06] border-brand-border/70 hover:border-brand-red'
-        }`;
-
-        card.onclick = () => filterByCreator(c.name);
-
-        card.innerHTML = `
-          <div>
-            <div class="flex items-center gap-2.5 mb-2.5">
-              <div class="relative shrink-0">
-                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-tr ${grad} flex items-center justify-center font-black text-xs text-white shadow-md">
-                  ${inits}
-                </div>
-                <span class="absolute -bottom-1 -right-1 text-[11px] bg-black/90 rounded-full px-1 border border-white/20">${platIcon}</span>
-              </div>
-              <div class="overflow-hidden">
-                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-brand-red transition-colors truncate" title="${c.name}">
-                  ${c.name}
-                </h4>
-                <span class="text-[10px] text-slate-400 font-medium">
-                  ${c.count} ${c.count === 1 ? 'reference' : 'references'}
-                </span>
-              </div>
-            </div>
-
-            <div class="space-y-1">
-              <div class="text-[9px] uppercase font-bold text-slate-500 tracking-wider">Motion Signature:</div>
-              <div class="flex flex-wrap gap-1">
-                <span class="px-1.5 py-0.5 rounded bg-white/10 text-[9px] sm:text-[10px] text-slate-200 font-semibold truncate max-w-full">
-                  ${primaryStyle}
-                </span>
-                ${secondaryStyle ? `
-                  <span class="px-1.5 py-0.5 rounded bg-white/5 text-[9px] text-slate-400 font-medium truncate max-w-full">
-                    ${secondaryStyle}
-                  </span>
-                ` : ''}
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-3 pt-2 border-t border-white/5 flex items-center justify-between text-[10px] text-slate-400 group-hover:text-brand-red transition-colors font-medium">
-            <span>${isActive ? '✓ Selected' : 'View Profile'}</span>
-            <span class="group-hover:translate-x-0.5 transition-transform">→</span>
-          </div>
-        `;
-
-        container.appendChild(card);
-      });
-    }
-
-    function toggleCreatorsExpand() {
-      creatorsExpanded = !creatorsExpanded;
-      renderCreatorCards();
-    }
-
-    function handleCreatorSearch(val) {
-      currentCreatorSearchQuery = val.trim().toLowerCase();
-      renderCreatorCards();
+      setView('styles');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function filterByCreator(creator) {
-      setView('grid');
-
-      // Clear conflicting filters so the selection is never empty
-      if (document.getElementById('style-filter')) document.getElementById('style-filter').value = 'all';
-      if (document.getElementById('type-filter')) document.getElementById('type-filter').value = 'all';
-      if (document.getElementById('status-filter')) document.getElementById('status-filter').value = 'all';
-      if (document.getElementById('platform-filter')) document.getElementById('platform-filter').value = 'all';
-
-      const searchInput = document.getElementById('search-input');
-      if (searchInput && searchInput.value) {
-        searchInput.value = '';
-        const clearBtn = document.getElementById('clear-search-btn');
-        if (clearBtn) clearBtn.classList.add('hidden');
-      }
-
-      currentActiveCreator = creator;
-      const select = document.getElementById('creator-filter');
-      if (select) select.value = creator;
-
-      renderCreatorCards();
-      applyGridFilters();
-
-      const gridCards = document.getElementById('grid-cards-container');
-      if (gridCards) {
-        gridCards.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (creator === 'all') {
+        showCreatorsView();
+      } else {
+        openCreatorProfileModal(creator);
       }
     }
 
     function filterByStyle(styleName) {
-      setView('grid');
-
-      // Clear conflicting filters so the selection is never empty
-      if (document.getElementById('creator-filter')) document.getElementById('creator-filter').value = 'all';
-      if (document.getElementById('type-filter')) document.getElementById('type-filter').value = 'all';
-      if (document.getElementById('status-filter')) document.getElementById('status-filter').value = 'all';
-      if (document.getElementById('platform-filter')) document.getElementById('platform-filter').value = 'all';
-
-      const searchInput = document.getElementById('search-input');
-      if (searchInput && searchInput.value) {
-        searchInput.value = '';
-        const clearBtn = document.getElementById('clear-search-btn');
-        if (clearBtn) clearBtn.classList.add('hidden');
-      }
-
-      const select = document.getElementById('style-filter');
-      if (select) select.value = styleName === 'all' ? 'all' : styleName;
-
-      const enLabel = getStyleLabelEN(styleName);
-      document.querySelectorAll('.style-pill').forEach(btn => {
-        if ((styleName === 'all' && btn.innerText.includes('All Styles')) || 
-            (styleName !== 'all' && (btn.innerText.includes(enLabel) || btn.innerText.includes(styleName)))) {
-          btn.className = 'style-pill active px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-red text-white shadow-lg shadow-brand-red/30 transition-all flex items-center gap-1.5';
-        } else {
-          btn.className = 'style-pill px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 hover:border-brand-red transition-all flex items-center gap-1.5';
-        }
-      });
-
-      applyGridFilters();
-
-      const gridCards = document.getElementById('grid-cards-container');
-      if (gridCards) {
-        gridCards.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      selectStyleSection(styleName);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     // Stats and Progress Counter
@@ -1431,7 +1936,9 @@
         <div class="p-3 sm:p-3.5 flex flex-col justify-between flex-1 space-y-2">
           <div class="space-y-1">
             <div class="flex items-center justify-between gap-2">
-              <span class="text-[10px] sm:text-[11px] font-bold text-brand-red uppercase tracking-wider block line-clamp-1">${item.creator}</span>
+              <button onclick="openCreatorProfileModal('${(item.creator || '').replace(/'/g, "\\'")}'); event.stopPropagation();" class="card-action-btn text-[10px] sm:text-[11px] font-bold text-brand-red hover:text-white uppercase tracking-wider flex items-center gap-1 line-clamp-1 text-left transition-colors" title="Ver Perfil do Criador">
+                <span>👤 ${item.creator}</span>
+              </button>
             </div>
             <h3 class="text-xs sm:text-sm font-bold text-white group-hover:text-brand-red transition-colors line-clamp-2 leading-snug">${item.title}</h3>
           </div>
@@ -1688,30 +2195,43 @@
       applyGridFilters();
     }
 
-    // View Navigation
+    // View Navigation (Separated Views: 'home', 'creators', 'styles', 'grid')
     function setView(view) {
       const homeView = document.getElementById('home-view');
+      const creatorsView = document.getElementById('creators-view');
+      const stylesView = document.getElementById('styles-view');
       const gridView = document.getElementById('grid-view');
       const hero = document.getElementById('hero-section');
-      const tabHome = document.getElementById('tab-home');
-      const tabGrid = document.getElementById('tab-grid');
-      const mobHome = document.getElementById('mobile-nav-home');
 
-      if (view === 'home') {
-        homeView.classList.remove('hidden');
-        gridView.classList.add('hidden');
-        hero.classList.remove('hidden');
-        if (tabHome) tabHome.className = 'px-3.5 py-1.5 rounded-full bg-white/10 text-white font-semibold transition-all';
-        if (tabGrid) tabGrid.className = 'px-3.5 py-1.5 rounded-full hover:bg-white/5 hover:text-white transition-all';
-        if (mobHome) mobHome.className = 'flex flex-col items-center gap-0.5 py-1 px-3 text-brand-red transition-colors';
-      } else {
-        homeView.classList.add('hidden');
-        gridView.classList.remove('hidden');
-        hero.classList.add('hidden');
-        if (tabHome) tabHome.className = 'px-3.5 py-1.5 rounded-full hover:bg-white/5 hover:text-white transition-all';
-        if (tabGrid) tabGrid.className = 'px-3.5 py-1.5 rounded-full bg-white/10 text-white font-semibold transition-all';
-        if (mobHome) mobHome.className = 'flex flex-col items-center gap-0.5 py-1 px-3 text-slate-400 hover:text-white transition-colors';
-      }
+      if (homeView) homeView.classList.toggle('hidden', view !== 'home');
+      if (hero) hero.classList.toggle('hidden', view !== 'home');
+      if (creatorsView) creatorsView.classList.toggle('hidden', view !== 'creators');
+      if (stylesView) stylesView.classList.toggle('hidden', view !== 'styles');
+      if (gridView) gridView.classList.toggle('hidden', view !== 'grid');
+
+      const navMap = [
+        { id: 'tab-home', mob: 'mobile-nav-home', key: 'home' },
+        { id: 'tab-creators', mob: 'mobile-nav-creators', key: 'creators' },
+        { id: 'tab-styles', mob: 'mobile-nav-styles', key: 'styles' },
+        { id: 'tab-grid', mob: 'mobile-nav-grid', key: 'grid' }
+      ];
+
+      navMap.forEach(t => {
+        const el = document.getElementById(t.id);
+        const mobEl = document.getElementById(t.mob);
+        const active = (t.key === view);
+        if (el) {
+          el.className = active
+            ? 'px-3.5 py-1.5 rounded-full bg-brand-red text-white border border-brand-red shadow-lg shadow-brand-red/25 transition-all flex items-center gap-1.5 font-bold'
+            : 'px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 hover:text-white border border-white/10 transition-all flex items-center gap-1.5';
+        }
+        if (mobEl) {
+          mobEl.className = active
+            ? 'flex flex-col items-center gap-0.5 py-1 px-2.5 text-brand-red font-bold transition-colors'
+            : 'flex flex-col items-center gap-0.5 py-1 px-2.5 text-slate-400 hover:text-white transition-colors';
+        }
+      });
+
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
